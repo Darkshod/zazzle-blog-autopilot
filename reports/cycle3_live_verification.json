@@ -1,0 +1,295 @@
+{
+  "repo_commits": {
+    "zazzle-blog-autopilot": "3759a9a",
+    "darkshod.github.io": "e991f11"
+  },
+  "sitemap_total": 64,
+  "sitemap_all_200": true,
+  "articles_total": 13,
+  "articles_all_200": true,
+  "duplicate_trackers_found": false,
+  "pins_total": 20,
+  "unique_pin_destinations": 12,
+  "pins_all_200": true,
+  "articles": [
+    {
+      "url": "https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/oolong-and-paperbacks-tee.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/patriotic-woodcut-greeting-card.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/bookshop-and-tea-lover-t-shirt.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/a-tini-bit-merry-shirt.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/happy-veterans-day-heritage-eagle-card.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/dirty-martini-christmas-tee.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/old-money-christmas-card.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    },
+    {
+      "url": "https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html",
+      "http_status": 200,
+      "outbound_tracker_count": 1,
+      "duplicate_tracker": false,
+      "ga4_tag_injected": false,
+      "gsc_meta_injected": false,
+      "zazzle_cta_count": 6
+    }
+  ],
+  "pins": [
+    {
+      "pin_index": 1,
+      "article_slug": "tartan-rocking-horse-holiday-card",
+      "title": "Tartan Rocking Horse Holiday Card | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 2,
+      "article_slug": "pinkmas-coquette-christmas-mug",
+      "title": "Pinkmas Coquette Christmas Mug | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 3,
+      "article_slug": "a-tini-bit-merry-christmas-mug",
+      "title": "A Tini Bit Merry Christmas Mug | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 4,
+      "article_slug": "pink-bow-holiday-coffee-mug",
+      "title": "Pink Bow Holiday Coffee Mug | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 5,
+      "article_slug": "old-money-christmas-card",
+      "title": "Old Money Christmas Card | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/old-money-christmas-card.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 6,
+      "article_slug": "old-money-christmas-gift-wrap",
+      "title": "How to Customize Holiday Gift Wrap for Old Money Christmas Gift Wrap",
+      "destination_url": "https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 7,
+      "article_slug": "old-money-christmas-card",
+      "title": "How to Customize Holiday Greeting Cards for Old Money Christmas Card",
+      "destination_url": "https://darkshod.github.io/articles/old-money-christmas-card.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 8,
+      "article_slug": "happy-veterans-day-heritage-eagle-card",
+      "title": "Happy Veterans Day Heritage Eagle Card | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/happy-veterans-day-heritage-eagle-card.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 9,
+      "article_slug": "patriotic-woodcut-greeting-card",
+      "title": "Patriotic Woodcut Greeting Card | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/patriotic-woodcut-greeting-card.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 10,
+      "article_slug": "bookshop-and-tea-lover-t-shirt",
+      "title": "Bookshop And Tea Lover T-Shirt | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/bookshop-and-tea-lover-t-shirt.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 11,
+      "article_slug": "old-money-christmas-gift-wrap",
+      "title": "Old Money Christmas Gift Wrap | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 12,
+      "article_slug": "dirty-martini-christmas-tee",
+      "title": "Dirty Martini Christmas Tee | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/dirty-martini-christmas-tee.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 13,
+      "article_slug": "sourdough-baker-gift-shirt",
+      "title": "Sourdough Baker Gift Shirt | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 14,
+      "article_slug": "a-tini-bit-merry-shirt",
+      "title": "A Tini Bit Merry Shirt | 2026 Gift Guide",
+      "destination_url": "https://darkshod.github.io/articles/a-tini-bit-merry-shirt.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 15,
+      "article_slug": "tartan-rocking-horse-holiday-card",
+      "title": "How to Customize Holiday Greeting Cards for Tartan Rocking Horse Holiday Card",
+      "destination_url": "https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 16,
+      "article_slug": "pinkmas-coquette-christmas-mug",
+      "title": "How to Customize Coffee Mugs for Pinkmas Coquette Christmas Mug",
+      "destination_url": "https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 17,
+      "article_slug": "a-tini-bit-merry-christmas-mug",
+      "title": "How to Customize Coffee Mugs for A Tini Bit Merry Christmas Mug",
+      "destination_url": "https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 18,
+      "article_slug": "pink-bow-holiday-coffee-mug",
+      "title": "How to Customize Coffee Mugs for Pink Bow Holiday Coffee Mug",
+      "destination_url": "https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 19,
+      "article_slug": "dirty-martini-christmas-tee",
+      "title": "How to Customize Holiday Apparel for Dirty Martini Christmas Tee",
+      "destination_url": "https://darkshod.github.io/articles/dirty-martini-christmas-tee.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    },
+    {
+      "pin_index": 20,
+      "article_slug": "sourdough-baker-gift-shirt",
+      "title": "How to Customize Apparel for Sourdough Baker Gift Shirt",
+      "destination_url": "https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html",
+      "http_status": 200,
+      "status": "pending_approval"
+    }
+  ]
+}
