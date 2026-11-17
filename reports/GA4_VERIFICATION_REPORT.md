@@ -1,17 +1,25 @@
 # GA4 Verification Report — DARKSHOD
 
 - **Measurement ID Configured:** `G-JT1HMMV6S5` (stored in local gitignored `.env` as `GA4_MEASUREMENT_ID`; never committed to GitHub)
-- **Live Deployment:** `https://darkshod.github.io/` (website repo commit `94f43b6`, main repo commit `52bb26d` + report update)
-- **Articles Covered:** `13 / 13` live articles on `https://darkshod.github.io/` (`sitemap_total: 64`, `sitemap_all_200: true`, `articles_all_200: true`, `duplicate_trackers_found: false`), plus `blog.html` and homepage `index.html` (`G-JT1HMMV6S5` verified present in live homepage HTML)
-- **Events Implemented:**
-  - `page_view` (via `gtag.js` with `anonymize_ip: true`)
-  - `zazzle_outbound_click` (non-affiliate Zazzle links)
-  - `zazzle_affiliate_click` (affiliate Zazzle links with `data-affiliate="true"`)
-- **Live Browser Network Verification (`https://darkshod.github.io/articles/old-money-christmas-card.html`):**
-  - `GET https://www.googletagmanager.com/gtag/js?id=G-JT1HMMV6S5` -> HTTP `200` (`1` request, `0` duplicate scripts)
-  - `POST https://www.google-analytics.com/g/collect?v=2&tid=G-JT1HMMV6S5...&en=page_view` -> HTTP `204`
-  - Single click on `"Customize & View on Zazzle →"` (`a.zazzle-cta-card`, `rf=238181835450951105`) -> `1` `POST https://www.google-analytics.com/g/collect?v=2&tid=G-JT1HMMV6S5...&en=zazzle_affiliate_click&ep.event_type=affiliate_click&ep.article_slug=old-money-christmas-card&ep.product_id=5` -> HTTP `204` (`0` duplicate events)
-  - Note: `zazzle_outbound_click` was not triggered during this click test because the article CTA uses an affiliate `rf=` link (`data-affiliate="true"`), which routes to `zazzle_affiliate_click` as designed.
-  - Note: An initial browser visit to `https://darkshod.github.io/` observed `0` GA requests (before CDN cache refresh), though fetching `https://darkshod.github.io/` directly confirms `G-JT1HMMV6S5` is present in the live HTML.
-- **Automated Test Suite:** `python -m pytest -v` -> `16 passed` (`0` failed, `0` skipped)
-- **GA4 Realtime Dashboard Status:** **Pending Owner Confirmation** — live `g/collect` HTTP `204` beacons to `G-JT1HMMV6S5` are confirmed leaving the browser, but confirming they appear inside Google Analytics (`https://analytics.google.com/` -> **Reports -> Realtime**) requires your personal Google account login.
+- **Live Deployment:** `https://darkshod.github.io/` (`Darkshod/darkshod.github.io` commit `f2645ae`)
+- **Live Site Audit (`scripts/verify_cycle3_live.py`):**
+  - `sitemap_total`: `64`, `sitemap_all_200`: `true`
+  - `articles_total`: `13`, `articles_all_200`: `true`
+  - `duplicate_trackers_found`: `false`
+  - `pins_total`: `20`, `unique_pin_destinations`: `12`, `pins_all_200`: `true`
+- **Privacy & Duplicate-Event Prevention:**
+  - `anonymize_ip: true` configured on `G-JT1HMMV6S5` across homepage, `blog.html`, and all `13` articles.
+  - `window.__darkshodClickInit` guard prevents duplicate click listeners (`1` listener per page, `0` duplicate events).
+  - Click listener (`a[href*="zazzle.com"]`) excludes internal links and distinguishes `data-affiliate="true"` / `rf=` links (`zazzle_affiliate_click`) from non-affiliate Zazzle links (`zazzle_outbound_click`).
+- **Homepage Investigation & Broken Link Repair:**
+  - **Zero-GA-Request Cause:** GitHub Pages serves `/` with `Cache-Control: max-age=600` (10 minutes); the earlier browser visit hit a cached pre-GA4 response. Cache-bypassed load (`https://darkshod.github.io/?v=f2645ae`) fired `gtag/js?id=G-JT1HMMV6S5` (HTTP `200`) and `en=page_view` (HTTP `204`) with `0` console errors.
+  - **Broken Pinkmas Link Fix:** Replaced `/articles/pinkmas-christmas-card.html` (`404`) on the homepage with `/articles/pinkmas-coquette-christmas-mug.html`, verified navigating to HTTP `200`.
+- **Multi-Page Live Browser Verification (Commit `f2645ae`):**
+  - **Homepage (`/?v=f2645ae`):** HTTP `200`, `gtag/js` HTTP `200`, `en=page_view` HTTP `204`, `0` console errors.
+  - **`pinkmas-coquette-christmas-mug.html`:** HTTP `200`, `gtag/js` HTTP `200` (`1` request), `en=page_view` HTTP `204`, `0` console errors.
+    - Non-affiliate link click (`https://www.zazzle.com/`): **1** `en=zazzle_outbound_click` HTTP `204` (`ep.event_type=outbound_product`, `ep.article_slug=pinkmas-coquette-christmas-mug`, `ep.product_id=`, `ep.href=https://www.zazzle.com/`).
+    - Affiliate CTA click (`a.zazzle-cta-card`, `rf=238181835450951105`): **1** `en=zazzle_affiliate_click` HTTP `204` (`ep.event_type=affiliate_click`, `ep.article_slug=pinkmas-coquette-christmas-mug`, `ep.product_id=2`).
+  - **`a-tini-bit-merry-christmas-mug.html`:** HTTP `200`, `gtag/js` HTTP `200`, `en=page_view` HTTP `204`, affiliate CTA click fired **1** `en=zazzle_affiliate_click` HTTP `204` (`ep.event_type=affiliate_click`, `ep.article_slug=a-tini-bit-merry-christmas-mug`, `ep.product_id=4`), `0` console errors.
+  - **`tartan-rocking-horse-holiday-card.html`:** HTTP `200`, `gtag/js` active (cached), `en=page_view` HTTP `204`, `0` console errors, `0` blocked tracking requests.
+- **Automated Test Suite:** `python -m pytest -v` -> `16 passed` (`0` failed, `0` skipped).
+- **GA4 Realtime Dashboard Status:** **Pending Owner Confirmation** — live `g/collect` HTTP `204` beacons to `G-JT1HMMV6S5` are verified leaving the browser, while confirming them inside Google Analytics (`https://analytics.google.com/` -> **Reports -> Realtime**) belongs to the owner's account-level check.
