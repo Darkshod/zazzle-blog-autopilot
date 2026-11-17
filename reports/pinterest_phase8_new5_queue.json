@@ -1,0 +1,41 @@
+{
+  "total": 5,
+  "approval_required": true,
+  "pins": [
+    {
+      "slug": "tartan-rocking-horse-ceramic-ornament",
+      "title": "Tartan Rocking Horse Ceramic Ornament",
+      "destination_url": "https://darkshod.github.io/articles/tartan-rocking-horse-ceramic-ornament.html",
+      "image_path": "/assets/generated/tartan-rocking-horse-ceramic-ornament-showcase-pin.jpg",
+      "status": "pending_approval"
+    },
+    {
+      "slug": "night-shift-nurse-mug",
+      "title": "Night Shift Social Club 11oz Mug",
+      "destination_url": "https://darkshod.github.io/articles/night-shift-nurse-mug.html",
+      "image_path": "/assets/generated/night-shift-nurse-mug-showcase-pin.jpg",
+      "status": "pending_approval"
+    },
+    {
+      "slug": "retro-italian-espresso-poster",
+      "title": "Retro Italian Espresso Kitchen Art",
+      "destination_url": "https://darkshod.github.io/articles/retro-italian-espresso-poster.html",
+      "image_path": "/assets/generated/retro-italian-espresso-poster-showcase-pin.jpg",
+      "status": "pending_approval"
+    },
+    {
+      "slug": "ceramics-studio-gift-idea",
+      "title": "Kiln and Clay Artisan Ceramics Mug",
+      "destination_url": "https://darkshod.github.io/articles/ceramics-studio-gift-idea.html",
+      "image_path": "/assets/generated/ceramics-studio-gift-idea-showcase-pin.jpg",
+      "status": "pending_approval"
+    },
+    {
+      "slug": "botanical-florist-business-card-template",
+      "title": "Botanical Florist Business Card",
+      "destination_url": "https://darkshod.github.io/articles/botanical-florist-business-card-template.html",
+      "image_path": "/assets/generated/botanical-florist-business-card-template-showcase-pin.jpg",
+      "status": "pending_approval"
+    }
+  ]
+}
