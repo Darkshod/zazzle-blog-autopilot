@@ -104,11 +104,16 @@ nav a:hover{color:var(--ink)}
 .article-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;margin:2rem 0}
 .article-wrap img{max-width:100%;height:auto;border-radius:8px}
 .zazzle-cta-card{display:inline-block;margin:.6rem 0;padding:.75rem 1.4rem;background:var(--accent);color:#fff!important;border-radius:999px;text-decoration:none;font-weight:600}
+.rec-card{display:grid;grid-template-columns:210px 1fr;gap:1.25rem;background:#faf8f4;border:1px solid var(--border);border-radius:10px;padding:1rem;margin:1.25rem 0;align-items:start}
+.rec-card-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block}
+.rec-badge{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700;display:block;margin-bottom:.25rem}
+.rec-card-body h3{margin:.15rem 0 .45rem;font-family:Georgia,serif}
+.rec-price{font-weight:600;font-size:.92rem;color:var(--accent)}
 blockquote{margin:1rem 0;padding:.8rem 1rem;background:#f4efe6;border-left:4px solid var(--gold);border-radius:4px}
 .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:1rem}
 .site-footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:3rem;text-align:center;font-size:.85rem;color:var(--muted)}
 .footer-links a{margin:0 .35rem}
-@media(max-width:640px){.article-wrap{padding:1.25rem}}
+@media(max-width:640px){.article-wrap{padding:1.25rem}.rec-card{grid-template-columns:1fr}}
 """.strip()
 
 
