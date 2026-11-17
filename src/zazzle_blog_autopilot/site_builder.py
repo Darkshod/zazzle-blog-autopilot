@@ -26,16 +26,29 @@ def _base_template(
     body_html: str,
     og_image: str = "",
     json_ld: list[dict[str, Any]] | None = None,
+    ga4_id: str = "",
+    gsc_token: str = "",
 ) -> str:
     ld_scripts = "\n  ".join(
         f'<script type="application/ld+json">{json.dumps(obj)}</script>' for obj in (json_ld or [])
     )
     og_img_tag = f'<meta property="og:image" content="{html.escape(og_image)}" />' if og_image else ""
+    gsc_tag = f'<meta name="google-site-verification" content="{html.escape(gsc_token)}" />' if gsc_token else ""
+    ga4_script = (
+        f'<script async src="https://www.googletagmanager.com/gtag/js?id={html.escape(ga4_id)}"></script>\n'
+        f'  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","{html.escape(ga4_id)}",{{"anonymize_ip":true}});</script>'
+        if ga4_id
+        else ""
+    )
+    click_tracker_js = """<script>
+document.addEventListener('click',function(e){var a=e.target.closest('a.zazzle-cta-card');if(!a)return;var isAff=a.dataset.affiliate==='true';var payload={event_type:isAff?'affiliate_click':'outbound_product',article_slug:a.dataset.article||'unknown',product_id:a.dataset.productId||'',href:a.href};if(typeof gtag==='function'){gtag('event',isAff?'zazzle_affiliate_click':'zazzle_outbound_click',payload);}});
+</script>"""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {gsc_tag}
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}" />
   <link rel="canonical" href="{html.escape(canonical_url)}" />
@@ -45,6 +58,7 @@ def _base_template(
   <meta property="og:url" content="{html.escape(canonical_url)}" />
   {og_img_tag}
   <link rel="stylesheet" href="/assets/style.css" />
+  {ga4_script}
   {ld_scripts}
 </head>
 <body>
@@ -75,6 +89,7 @@ def _base_template(
       </p>
     </div>
   </footer>
+  {click_tracker_js}
 </body>
 </html>
 """
@@ -223,7 +238,16 @@ class StaticBlogBuilder:
             ]
             (dist_dir / "articles" / f"{art.slug}.html").write_text(
                 _base_template(
-                    art.title, art.meta_description, canonical, brand, tagline, article_html, og_img, json_ld
+                    art.title,
+                    art.meta_description,
+                    canonical,
+                    brand,
+                    tagline,
+                    article_html,
+                    og_img,
+                    json_ld,
+                    ga4_id=self.settings.brand.ga4_measurement_id,
+                    gsc_token=self.settings.brand.gsc_verification_token,
                 ),
                 encoding="utf-8",
             )

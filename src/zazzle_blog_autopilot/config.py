@@ -20,6 +20,8 @@ class BrandConfig(BaseModel):
     base_url: str = "https://example.pages.dev"
     primary_market: str = "US"
     secondary_markets: list[str] = Field(default_factory=lambda: ["GB", "CA", "AU"])
+    ga4_measurement_id: str = ""
+    gsc_verification_token: str = ""
 
 
 class MonetizationConfig(BaseModel):
@@ -81,5 +83,9 @@ def load_settings(path: Path | None = None) -> AppSettings:
         settings.monetization.zazzle_affiliate_id = env_aff
     if env_approved := os.getenv("ZAZZLE_AFFILIATE_APPROVED"):
         settings.monetization.zazzle_affiliate_approved = env_approved.lower() == "true"
+    if env_ga4 := os.getenv("GA4_MEASUREMENT_ID"):
+        settings.brand.ga4_measurement_id = env_ga4.strip()
+    if env_gsc := os.getenv("GSC_VERIFICATION_TOKEN"):
+        settings.brand.gsc_verification_token = env_gsc.strip()
 
     return settings

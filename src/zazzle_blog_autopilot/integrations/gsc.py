@@ -71,3 +71,12 @@ class GoogleSearchConsoleClient:
             "index_status": result.get("verdict", "UNKNOWN"),
             "coverage_state": result.get("coverageState", ""),
         }
+
+    def submit_sitemap(self, sitemap_url: str) -> dict[str, Any]:
+        if not self.is_connected:
+            return {"submitted": False, "reason": "GSC_ACCESS_TOKEN not configured."}
+        encoded_site = quote(self.site_url, safe="")
+        encoded_sm = quote(sitemap_url, safe="")
+        endpoint = f"https://www.googleapis.com/webmasters/v3/sites/{encoded_site}/sitemaps/{encoded_sm}"
+        resp = requests.put(endpoint, headers={"Authorization": f"Bearer {self.access_token}"}, timeout=15)
+        return {"submitted": resp.status_code in (200, 204), "status_code": resp.status_code}
