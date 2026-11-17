@@ -88,8 +88,8 @@ def _load_local_dotenv(env_path: Path) -> None:
 
 def load_settings(path: Path | None = None) -> AppSettings:
     """Load YAML settings and apply non-secret environment overrides."""
-    _load_local_dotenv(ROOT_DIR / ".env")
     cfg_path = path or DEFAULT_SETTINGS_PATH
+    _load_local_dotenv(cfg_path.parent.parent / ".env")
     raw: dict[str, Any] = {}
     if cfg_path.exists():
         raw = yaml.safe_load(cfg_path.read_text(encoding="utf-8")) or {}

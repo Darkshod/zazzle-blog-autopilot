@@ -16,7 +16,9 @@ def test_ga4_measurement_id_validation() -> None:
     assert validate_ga4_measurement_id("invalid-id") is False
 
 
-def test_pinterest_approval_persistence_and_exclusions(tmp_path: Path) -> None:
+def test_pinterest_approval_persistence_and_exclusions(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("GA4_MEASUREMENT_ID", raising=False)
+    monkeypatch.delenv("GSC_ACCESS_TOKEN", raising=False)
     repo_root = Path(__file__).resolve().parents[1]
     (tmp_path / "config").mkdir()
     (tmp_path / "data").mkdir()
