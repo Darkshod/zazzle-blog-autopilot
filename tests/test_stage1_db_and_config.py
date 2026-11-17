@@ -8,9 +8,13 @@ from zazzle_blog_autopilot.models import Product, TaskResult
 
 
 def test_load_settings_defaults() -> None:
+    from zazzle_blog_autopilot.config import AppSettings
+
+    default_settings = AppSettings()
+    assert default_settings.monetization.zazzle_affiliate_approved is False
+
     settings = load_settings()
     assert settings.brand.primary_market == "US"
-    assert settings.monetization.zazzle_affiliate_approved is False
     assert abs(sum(settings.scoring_weights.values()) - 1.0) < 1e-6
 
 

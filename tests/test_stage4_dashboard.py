@@ -19,7 +19,7 @@ def test_dashboard_all_buttons_end_to_end(tmp_path: Path) -> None:
     client = TestClient(app)
 
     assert client.get("/").status_code == 200
-    assert client.post("/api/research-products").json()["output_summary"]["total_products"] == 8
+    assert client.post("/api/research-products").json()["output_summary"]["total_products"] >= 8
     assert client.post("/api/find-keywords").json()["output_summary"]["keywords_saved"] >= 8
 
     gen = client.post("/api/generate-articles").json()

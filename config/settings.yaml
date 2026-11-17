@@ -1,14 +1,14 @@
 brand:
-  name: "Your Brand Name" # Configure before deploying; do not assume shop name
+  name: "GRIMORA11"
   tagline: "Thoughtful Gift Guides, Custom Stationery & Artisan Home Finds"
-  contact_email: "hello@example.com"
-  base_url: "https://example.pages.dev"
+  contact_email: "hello@grimora11.com"
+  base_url: "https://darkshod.github.io"
   primary_market: "US"
   secondary_markets: ["GB", "CA", "AU"]
 
 monetization:
-  zazzle_affiliate_approved: false # Set true ONLY after verifying program eligibility & approval
-  zazzle_affiliate_id: ""
+  zazzle_affiliate_approved: true
+  zazzle_affiliate_id: "238181835450951105"
   zazzle_affiliate_param: "rf"
   adsense_ready_pages: true
   applicant_country: "MA" # Morocco — verify country eligibility & Payoneer/wire payout before registering
