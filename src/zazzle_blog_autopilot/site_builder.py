@@ -236,7 +236,7 @@ class StaticBlogBuilder:
                     f"<p>Preview live personalization, finishes, and current US pricing directly on Zazzle before ordering.</p>"
                     f'<div class="bottom-cta-box-actions">'
                     f'<a class="zazzle-cta-card" href="{c_href}" data-article="{c_art}" data-product-id="{c_pid}" data-affiliate="{c_aff}" target="_blank" {c_rel}>Customize &amp; Order on Zazzle &rarr;</a>'
-                    f'<a class="cta-secondary-btn" href="/blog.html">Explore All Gift Guides &rarr;</a>'
+                    f'<a class="cta-secondary-btn" href="/">Explore All Gift Guides &rarr;</a>'
                     f"</div></section>"
                 )
             rendered_with_anchor = rendered.replace('<div class="rec-card">', '<div id="gift-picks" class="rec-card">', 1)
