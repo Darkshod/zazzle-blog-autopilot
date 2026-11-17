@@ -1,0 +1,282 @@
+{
+  "website_commit": "29fd301",
+  "sitemap_total": 81,
+  "sitemap_all_200": true,
+  "sitemap_bad": [],
+  "articles_total": 16,
+  "articles_all_200": true,
+  "all_articles_ga4_single": true,
+  "all_articles_zero_missing_dims": true,
+  "all_articles_zero_missing_alt": true,
+  "pins_total": 20,
+  "pins_unique_images": 20,
+  "pins_all_200": true,
+  "articles": [
+    {
+      "url": "https://darkshod.github.io/articles/tartan-rocking-horse-ceramic-ornament.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/retro-italian-espresso-poster.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/night-shift-nurse-mug.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/oolong-and-paperbacks-tee.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/patriotic-woodcut-greeting-card.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/bookshop-and-tea-lover-t-shirt.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/a-tini-bit-merry-shirt.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/happy-veterans-day-heritage-eagle-card.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/dirty-martini-christmas-tee.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/old-money-christmas-card.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    },
+    {
+      "url": "https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html",
+      "status": 200,
+      "ga4_scripts": 1,
+      "click_listeners": 1,
+      "missing_dims": 0,
+      "missing_alt": 0,
+      "aff_ctas": 3
+    }
+  ],
+  "pins": [
+    {
+      "pin": 1,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/tartan-rocking-horse-holiday-card-pinterest-pin.jpg"
+    },
+    {
+      "pin": 2,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/pinkmas-coquette-christmas-mug-pinterest-pin.jpg"
+    },
+    {
+      "pin": 3,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/a-tini-bit-merry-christmas-mug-pinterest-pin.jpg"
+    },
+    {
+      "pin": 4,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/pink-bow-holiday-coffee-mug-pinterest-pin.jpg"
+    },
+    {
+      "pin": 5,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/old-money-christmas-card-pinterest-pin.jpg"
+    },
+    {
+      "pin": 6,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/old-money-christmas-gift-wrap-pinterest-pin.jpg"
+    },
+    {
+      "pin": 7,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/old-money-christmas-card-customize-pin.jpg"
+    },
+    {
+      "pin": 8,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/happy-veterans-day-heritage-eagle-card-pinterest-pin.jpg"
+    },
+    {
+      "pin": 9,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/patriotic-woodcut-greeting-card-pinterest-pin.jpg"
+    },
+    {
+      "pin": 10,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/bookshop-and-tea-lover-t-shirt-pinterest-pin.jpg"
+    },
+    {
+      "pin": 11,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/old-money-christmas-gift-wrap-flatlay-pin.jpg"
+    },
+    {
+      "pin": 12,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/dirty-martini-christmas-tee-pinterest-pin.jpg"
+    },
+    {
+      "pin": 13,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/sourdough-baker-gift-shirt-pinterest-pin.jpg"
+    },
+    {
+      "pin": 14,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/a-tini-bit-merry-shirt-pinterest-pin.jpg"
+    },
+    {
+      "pin": 15,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/tartan-rocking-horse-holiday-card-customize-pin.jpg"
+    },
+    {
+      "pin": 16,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/pinkmas-coquette-christmas-mug-customize-pin.jpg"
+    },
+    {
+      "pin": 17,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/a-tini-bit-merry-christmas-mug-customize-pin.jpg"
+    },
+    {
+      "pin": 18,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/pink-bow-holiday-coffee-mug-customize-pin.jpg"
+    },
+    {
+      "pin": 19,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/dirty-martini-christmas-tee-customize-pin.jpg"
+    },
+    {
+      "pin": 20,
+      "dest_status": 200,
+      "img_status": 200,
+      "image_path": "/assets/generated/sourdough-baker-gift-shirt-customize-pin.jpg"
+    }
+  ]
+}

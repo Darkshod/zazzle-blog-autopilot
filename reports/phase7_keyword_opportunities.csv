@@ -1,0 +1,13 @@
+rank,keyword,category,search_intent,commercial_intent,zazzle_relevance,seasonal_demand,competition_level,ability_to_rank_small_site,status,research_source
+1,personalized heirloom christmas ornament,Holiday Decor,commercial_investigation,high,direct_product_match (Tartan Rocking Horse Ceramic Ornament),Q4_peak_oct_dec,medium,high,published (tartan-rocking-horse-ceramic-ornament),Google Autocomplete + Zazzle + Reddit
+2,custom family christmas ornaments with pets,Holiday Decor,commercial_investigation,high,high_zazzle_category_fit,Q4_peak_oct_dec,medium_high,medium,planned_article_4,Google Autocomplete + Zazzle + Reddit
+3,night shift nurse mug gift,Coffee Mugs,commercial_investigation,high,direct_product_match (Night Shift Social Club Chamomile 11oz Mug),evergreen_plus_q4,low_medium,high,published (night-shift-nurse-mug),Zazzle catalog + US gift intent
+4,retro italian espresso poster,Wall Art,commercial_investigation,medium_high,direct_product_match (Il Portafiltro Retro Espresso 18x24 Poster),evergreen_plus_q4,low_medium,high,published (retro-italian-espresso-poster),Zazzle catalog + Pinterest home decor
+5,pressed flower iphone case,Phone Cases,commercial_investigation,high,high_zazzle_category_fit,evergreen_spring_q4,medium_high,medium,planned_article_5,Google Autocomplete + Zazzle search
+6,personalized christmas ornaments with names,Holiday Decor,transactional_commercial,high,high_zazzle_category_fit,Q4_peak_oct_dec,high,medium_low,planned_article_6,Google Autocomplete + Zazzle search
+7,personalized mug gifts for her,Coffee Mugs,commercial_investigation,high,direct_category_fit,evergreen_plus_q4,high,medium_low,planned_article_7,Google Autocomplete
+8,personalized christmas gifts for couples,Holiday Gifts,commercial_investigation,high,high_zazzle_category_fit,Q4_peak_nov_dec,high,medium_low,planned_article_8,Google Autocomplete
+9,coquette christmas mug,Coffee Mugs,commercial_investigation,high,existing_published (pinkmas-coquette-christmas-mug),Q4_peak_oct_dec,low_medium,high,published (existing),Google Autocomplete
+10,old money christmas card,Holiday Greeting Cards,commercial_investigation,high,existing_published (old-money-christmas-card),Q4_peak_oct_dec,low,high,published (existing),Google Autocomplete
+11,artisan ceramics studio mug gift,Coffee Mugs,commercial_investigation,medium_high,direct_product_match (Kiln and Clay Mug),evergreen,low,high,planned_article_9,Zazzle catalog
+12,botanical florist business card template,Stationery,commercial_investigation,medium_high,direct_product_match (Meadow and Stem Card),evergreen,low,high,planned_article_10,Zazzle catalog

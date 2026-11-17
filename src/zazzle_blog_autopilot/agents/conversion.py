@@ -38,7 +38,7 @@ def render_product_card_markdown(
     rel_attr = 'rel="sponsored noopener noreferrer"' if is_aff else 'rel="noopener noreferrer"'
     link_badge = "Affiliate Partner Link" if is_aff else "Direct Zazzle Product Link"
     img_html = (
-        f'<div class="rec-card-media"><img src="{product.image_url}" alt="{product.name}" loading="lazy" decoding="async" /></div>'
+        f'<div class="rec-card-media"><img src="{product.image_url}" alt="{product.name}" width="720" height="900" loading="lazy" decoding="async" /></div>'
         if product.image_url
         else ""
     )
