@@ -1,0 +1,33 @@
+name: Weekly SEO, Pinterest & Broken-Link Audit
+
+on:
+  schedule:
+    # Runs every Monday at 13:00 UTC (weekly SEO + Pinterest + broken-link check)
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+
+jobs:
+  weekly-audit:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run full test suite
+        run: python -m pytest -v
+      - name: Build site and run Phase 3 reports + live broken-link audit
+        run: |
+          python -m zazzle_blog_autopilot.cli run-all --csv data/sample_products.csv --max-articles 2
+          python -m zazzle_blog_autopilot.cli build-site
+          python scripts/phase3_engine.py
+          python scripts/audit_live_site.py || true
+      - name: Upload weekly SEO & growth reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-seo-growth-reports
+          path: reports/

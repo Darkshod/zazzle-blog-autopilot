@@ -1,13 +1,9 @@
 {
-  "healthy": false,
-  "sitemap_urls": 76,
+  "healthy": true,
+  "sitemap_urls": 64,
   "articles_crawled": 13,
-  "images_checked": 30,
-  "issues": [
-    "https://darkshod.github.io/: missing canonical tag",
-    "https://darkshod.github.io/blog.html: broken image https://darkshod.github.io/assets/generated/oolong-and-paperbacks-tee-guide-cover.jpg (404)",
-    "https://darkshod.github.io/blog.html: broken image https://darkshod.github.io/assets/generated/patriotic-woodcut-greeting-card-guide-cover.jpg (404)"
-  ],
+  "images_checked": 28,
+  "issues": [],
   "articles": [
     {
       "url": "https://darkshod.github.io/",
@@ -54,35 +50,6 @@
       "url": "https://darkshod.github.io/blog.html",
       "status": 200,
       "zazzle_ctas": [],
-      "broken_images": [
-        "https://darkshod.github.io/assets/generated/oolong-and-paperbacks-tee-guide-cover.jpg (404)",
-        "https://darkshod.github.io/assets/generated/patriotic-woodcut-greeting-card-guide-cover.jpg (404)"
-      ]
-    },
-    {
-      "url": "https://darkshod.github.io/articles/retro-italian-espresso-poster.html",
-      "status": 200,
-      "zazzle_ctas": [
-        "https://www.zazzle.com/il_portafiltro_retro_italian_espresso_corner_18x24_poster-256119663298023232?rf=238181835450951105",
-        "https://www.zazzle.com/il_portafiltro_retro_italian_espresso_corner_18x24_poster-256119663298023232?rf=238181835450951105",
-        "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
-        "https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971?rf=238181835450951105",
-        "https://www.zazzle.com/il_portafiltro_retro_italian_espresso_corner_18x24_poster-256119663298023232",
-        "https://www.zazzle.com/"
-      ],
-      "broken_images": []
-    },
-    {
-      "url": "https://darkshod.github.io/articles/night-shift-nurse-mug.html",
-      "status": 200,
-      "zazzle_ctas": [
-        "https://www.zazzle.com/night_shift_social_club_chamomile_moon_11oz_mug-256198934794123523?rf=238181835450951105",
-        "https://www.zazzle.com/night_shift_social_club_chamomile_moon_11oz_mug-256198934794123523?rf=238181835450951105",
-        "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
-        "https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971?rf=238181835450951105",
-        "https://www.zazzle.com/night_shift_social_club_chamomile_moon_11oz_mug-256198934794123523",
-        "https://www.zazzle.com/"
-      ],
       "broken_images": []
     },
     {
@@ -94,6 +61,32 @@
         "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
         "https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105",
         "https://www.zazzle.com/wild_yeast_and_wheat_sourdough_bakehouse_t_shirt-256398671135712299",
+        "https://www.zazzle.com/"
+      ],
+      "broken_images": []
+    },
+    {
+      "url": "https://darkshod.github.io/articles/oolong-and-paperbacks-tee.html",
+      "status": 200,
+      "zazzle_ctas": [
+        "https://www.zazzle.com/quiet_afternoon_bookshop_and_loose_leaf_tea_t_shirt-256820755168302251?rf=238181835450951105",
+        "https://www.zazzle.com/quiet_afternoon_bookshop_and_loose_leaf_tea_t_shirt-256820755168302251?rf=238181835450951105",
+        "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
+        "https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105",
+        "https://www.zazzle.com/quiet_afternoon_bookshop_and_loose_leaf_tea_t_shirt-256820755168302251",
+        "https://www.zazzle.com/"
+      ],
+      "broken_images": []
+    },
+    {
+      "url": "https://darkshod.github.io/articles/patriotic-woodcut-greeting-card.html",
+      "status": 200,
+      "zazzle_ctas": [
+        "https://www.zazzle.com/happy_veterans_day_heritage_eagle_woodcut_greeting_card-256800220164454499?rf=238181835450951105",
+        "https://www.zazzle.com/happy_veterans_day_heritage_eagle_woodcut_greeting_card-256800220164454499?rf=238181835450951105",
+        "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
+        "https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105",
+        "https://www.zazzle.com/happy_veterans_day_heritage_eagle_woodcut_greeting_card-256800220164454499",
         "https://www.zazzle.com/"
       ],
       "broken_images": []
@@ -151,6 +144,32 @@
       "broken_images": []
     },
     {
+      "url": "https://darkshod.github.io/articles/dirty-martini-christmas-tee.html",
+      "status": 200,
+      "zazzle_ctas": [
+        "https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971?rf=238181835450951105",
+        "https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971?rf=238181835450951105",
+        "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
+        "https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105",
+        "https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971",
+        "https://www.zazzle.com/"
+      ],
+      "broken_images": []
+    },
+    {
+      "url": "https://darkshod.github.io/articles/old-money-christmas-card.html",
+      "status": 200,
+      "zazzle_ctas": [
+        "https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027?rf=238181835450951105",
+        "https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027?rf=238181835450951105",
+        "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
+        "https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105",
+        "https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027",
+        "https://www.zazzle.com/"
+      ],
+      "broken_images": []
+    },
+    {
       "url": "https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html",
       "status": 200,
       "zazzle_ctas": [
@@ -185,32 +204,6 @@
         "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
         "https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105",
         "https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_wrap_wrapping_paper-256922898737242657",
-        "https://www.zazzle.com/"
-      ],
-      "broken_images": []
-    },
-    {
-      "url": "https://darkshod.github.io/articles/dirty-martini-christmas-tee.html",
-      "status": 200,
-      "zazzle_ctas": [
-        "https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971?rf=238181835450951105",
-        "https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971?rf=238181835450951105",
-        "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
-        "https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105",
-        "https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971",
-        "https://www.zazzle.com/"
-      ],
-      "broken_images": []
-    },
-    {
-      "url": "https://darkshod.github.io/articles/old-money-christmas-card.html",
-      "status": 200,
-      "zazzle_ctas": [
-        "https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027?rf=238181835450951105",
-        "https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027?rf=238181835450951105",
-        "https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105",
-        "https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105",
-        "https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027",
         "https://www.zazzle.com/"
       ],
       "broken_images": []
