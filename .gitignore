@@ -11,6 +11,7 @@ venv/
 .env
 *.pem
 *.key
+credentials/
 credentials*.json
 token*.json
 

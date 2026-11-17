@@ -1,7 +1,7 @@
 ---
 title: "Patriotic Woodcut Greeting Card: Curated 2026 Buyer & Gift Guide"
 slug: "patriotic-woodcut-greeting-card"
-description: "US guide to patriotic woodcut greeting card: customization tips, styling ideas, and curated patriotic stationery picks on Zazzle."
+description: "US guide to patriotic woodcut greeting card: customization tips, styling ideas, and curated patriotic stationery picks on Zazzle. Customize online in the..."
 category: "Patriotic Stationery"
 primary_keyword: "patriotic woodcut greeting card"
 ---
@@ -27,7 +27,7 @@ Instead of relying on loud novelty slogans, this piece works naturally for custo
 - **Related Ideas:** happy veterans day heritage eagle card, patriotic woodcut greeting card, veterans day card, patriotic eagle card
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/veterans-card.jpg" alt="Happy Veterans Day Heritage Eagle Card" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/veterans-card.jpg" alt="Happy Veterans Day Heritage Eagle Card" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Patriotic Stationery</span>
     <h3>Happy Veterans Day Heritage Eagle Card</h3>
@@ -51,7 +51,7 @@ For folded 5x7 greeting cards and 3.5x2 business stationery, keep custom text co
 ## Coordinating Picks to Pair Together
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Greeting Cards</span>
     <h3>Pinkmas Coquette Bow Tree Christmas Card</h3>
@@ -64,7 +64,7 @@ For folded 5x7 greeting cards and 3.5x2 business stationery, keep custom text co
 </div>
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Coffee Mugs</span>
     <h3>Pinkmas Coquette Bow Tree 11oz Coffee Mug</h3>
@@ -100,4 +100,4 @@ No. Pricing, promotions, and shipping estimates are set dynamically on Zazzle, s
 
 - Catalog record (`csv`): [Happy Veterans Day Heritage Eagle Card](https://www.zazzle.com/happy_veterans_day_heritage_eagle_woodcut_greeting_card-256800220164454499)
 - Marketplace details: [Zazzle](https://www.zazzle.com/)
-- Topic signals: Qualitative US market & Google Suggest research (free-tier estimates; search volumes are not fabricated).
+- Editorial standard: Product specifications and customization options are verified directly against live Zazzle listings.

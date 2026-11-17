@@ -38,7 +38,9 @@ def test_17_agent_manager_and_emergency_stop(tmp_path: Path) -> None:
     assert blocked["status"] == "EMERGENCY_STOP_ACTIVE"
 
 
-def test_executive_dashboard_weekly_and_emergency_endpoints(tmp_path: Path) -> None:
+def test_executive_dashboard_weekly_and_emergency_endpoints(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("GSC_CREDENTIALS_PATH", raising=False)
+    monkeypatch.delenv("GSC_ACCESS_TOKEN", raising=False)
     repo_root = Path(__file__).resolve().parents[1]
     (tmp_path / "config").mkdir()
     (tmp_path / "data").mkdir()

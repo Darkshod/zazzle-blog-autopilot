@@ -1,0 +1,125 @@
+{
+  "connected": true,
+  "generated_at": "2026-11-17T19:12:02.273095+00:00",
+  "reporting_delay_days": 2,
+  "sites": {
+    "connected": true,
+    "sites": [
+      {
+        "siteUrl": "https://darkshod.github.io/",
+        "permissionLevel": "siteFullUser"
+      }
+    ]
+  },
+  "sitemaps": {
+    "connected": true,
+    "sitemaps": [
+      {
+        "path": "https://darkshod.github.io/sitemap.xml",
+        "lastSubmitted": "2026-11-17T18:30:15.094Z",
+        "isPending": true,
+        "isSitemapsIndex": false,
+        "warnings": "0",
+        "errors": "0"
+      }
+    ]
+  },
+  "windows": {
+    "7d": {
+      "totals": {
+        "connected": true,
+        "start_date": "2026-11-09",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "query_page": {
+        "connected": true,
+        "start_date": "2026-11-09",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "country": {
+        "connected": true,
+        "start_date": "2026-11-09",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "device": {
+        "connected": true,
+        "start_date": "2026-11-09",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "daily": {
+        "connected": true,
+        "start_date": "2026-11-09",
+        "end_date": "2026-11-15",
+        "rows": []
+      }
+    },
+    "28d": {
+      "totals": {
+        "connected": true,
+        "start_date": "2026-10-19",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "query_page": {
+        "connected": true,
+        "start_date": "2026-10-19",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "country": {
+        "connected": true,
+        "start_date": "2026-10-19",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "device": {
+        "connected": true,
+        "start_date": "2026-10-19",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "daily": {
+        "connected": true,
+        "start_date": "2026-10-19",
+        "end_date": "2026-11-15",
+        "rows": []
+      }
+    },
+    "90d": {
+      "totals": {
+        "connected": true,
+        "start_date": "2026-08-18",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "query_page": {
+        "connected": true,
+        "start_date": "2026-08-18",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "country": {
+        "connected": true,
+        "start_date": "2026-08-18",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "device": {
+        "connected": true,
+        "start_date": "2026-08-18",
+        "end_date": "2026-11-15",
+        "rows": []
+      },
+      "daily": {
+        "connected": true,
+        "start_date": "2026-08-18",
+        "end_date": "2026-11-15",
+        "rows": []
+      }
+    }
+  }
+}

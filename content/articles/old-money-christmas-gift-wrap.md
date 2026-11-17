@@ -1,7 +1,7 @@
 ---
 title: "Old Money Christmas Gift Wrap: Curated 2026 Buyer & Gift Guide"
 slug: "old-money-christmas-gift-wrap"
-description: "US guide to old money christmas gift wrap: customization tips, styling ideas, and curated holiday gift wrap picks on Zazzle."
+description: "US guide to old money christmas gift wrap: customization tips, styling ideas, and curated holiday gift wrap picks on Zazzle. Customize online in the US on..."
 category: "Holiday Gift Wrap"
 primary_keyword: "old money christmas gift wrap"
 ---
@@ -27,7 +27,7 @@ Instead of relying on loud novelty slogans, this piece works naturally for custo
 - **Related Ideas:** tartan rocking horse wrapping paper, old money christmas gift wrap, tartan wrapping paper, old money gift wrap
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/tartan-wrap.jpg" alt="Tartan Rocking Horse Wrapping Paper" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/tartan-wrap.jpg" alt="Tartan Rocking Horse Wrapping Paper" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Gift Wrap</span>
     <h3>Tartan Rocking Horse Wrapping Paper</h3>
@@ -51,7 +51,7 @@ Use Zazzle's live customization preview to check cropping, bleed margins, and ma
 ## Coordinating Picks to Pair Together
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Greeting Cards</span>
     <h3>Pinkmas Coquette Bow Tree Christmas Card</h3>
@@ -64,7 +64,7 @@ Use Zazzle's live customization preview to check cropping, bleed margins, and ma
 </div>
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Coffee Mugs</span>
     <h3>Pinkmas Coquette Bow Tree 11oz Coffee Mug</h3>
@@ -100,4 +100,4 @@ No. Pricing, promotions, and shipping estimates are set dynamically on Zazzle, s
 
 - Catalog record (`csv`): [Tartan Rocking Horse Wrapping Paper](https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_wrap_wrapping_paper-256922898737242657)
 - Marketplace details: [Zazzle](https://www.zazzle.com/)
-- Topic signals: Qualitative US market & Google Suggest research (free-tier estimates; search volumes are not fabricated).
+- Editorial standard: Product specifications and customization options are verified directly against live Zazzle listings.

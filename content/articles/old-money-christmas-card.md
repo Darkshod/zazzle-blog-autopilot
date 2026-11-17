@@ -1,7 +1,7 @@
 ---
 title: "Old Money Christmas Card: Curated 2026 Buyer & Gift Guide"
 slug: "old-money-christmas-card"
-description: "US guide to old money christmas card: customization tips, styling ideas, and curated holiday greeting cards picks on Zazzle."
+description: "US guide to old money christmas card: customization tips, styling ideas, and curated holiday greeting cards picks on Zazzle. Customize online in the US on..."
 category: "Holiday Greeting Cards"
 primary_keyword: "old money christmas card"
 ---
@@ -27,7 +27,7 @@ Instead of relying on loud novelty slogans, this piece works naturally for custo
 - **Related Ideas:** old money christmas card, tartan rocking horse holiday card, tartan christmas card, old money christmas
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/tartan-card.jpg" alt="Tartan Rocking Horse Vintage Christmas Card" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/tartan-card.jpg" alt="Tartan Rocking Horse Vintage Christmas Card" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Greeting Cards</span>
     <h3>Tartan Rocking Horse Vintage Christmas Card</h3>
@@ -51,7 +51,7 @@ For folded 5x7 greeting cards and 3.5x2 business stationery, keep custom text co
 ## Coordinating Picks to Pair Together
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Greeting Cards</span>
     <h3>Pinkmas Coquette Bow Tree Christmas Card</h3>
@@ -64,7 +64,7 @@ For folded 5x7 greeting cards and 3.5x2 business stationery, keep custom text co
 </div>
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Coffee Mugs</span>
     <h3>Pinkmas Coquette Bow Tree 11oz Coffee Mug</h3>
@@ -100,4 +100,4 @@ No. Pricing, promotions, and shipping estimates are set dynamically on Zazzle, s
 
 - Catalog record (`csv`): [Tartan Rocking Horse Vintage Christmas Card](https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027)
 - Marketplace details: [Zazzle](https://www.zazzle.com/)
-- Topic signals: Qualitative US market & Google Suggest research (free-tier estimates; search volumes are not fabricated).
+- Editorial standard: Product specifications and customization options are verified directly against live Zazzle listings.

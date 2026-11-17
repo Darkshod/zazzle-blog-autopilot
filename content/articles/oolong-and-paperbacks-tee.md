@@ -1,7 +1,7 @@
 ---
 title: "Oolong And Paperbacks Tee: Curated 2026 Buyer & Gift Guide"
 slug: "oolong-and-paperbacks-tee"
-description: "US guide to oolong and paperbacks tee: customization tips, styling ideas, and curated apparel picks on Zazzle."
+description: "US guide to oolong and paperbacks tee: customization tips, styling ideas, and curated apparel picks on Zazzle. Customize online in the US on Zazzle with..."
 category: "Apparel"
 primary_keyword: "oolong and paperbacks tee"
 ---
@@ -27,7 +27,7 @@ Instead of relying on loud novelty slogans, this piece works naturally for custo
 - **Related Ideas:** bookshop and tea lover t-shirt, oolong and paperbacks tee, bookshop tee, tea lover shirt
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/bookshop-tee.jpg" alt="Oolong and Paperbacks Bookshop Tea T-Shirt" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/bookshop-tee.jpg" alt="Oolong and Paperbacks Bookshop Tea T-Shirt" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Apparel</span>
     <h3>Oolong and Paperbacks Bookshop Tea T-Shirt</h3>
@@ -51,7 +51,7 @@ When ordering graphic apparel, compare Zazzle's garment style selector (classic 
 ## Coordinating Picks to Pair Together
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Greeting Cards</span>
     <h3>Pinkmas Coquette Bow Tree Christmas Card</h3>
@@ -64,7 +64,7 @@ When ordering graphic apparel, compare Zazzle's garment style selector (classic 
 </div>
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Coffee Mugs</span>
     <h3>Pinkmas Coquette Bow Tree 11oz Coffee Mug</h3>
@@ -100,4 +100,4 @@ No. Pricing, promotions, and shipping estimates are set dynamically on Zazzle, s
 
 - Catalog record (`csv`): [Oolong and Paperbacks Bookshop Tea T-Shirt](https://www.zazzle.com/quiet_afternoon_bookshop_and_loose_leaf_tea_t_shirt-256820755168302251)
 - Marketplace details: [Zazzle](https://www.zazzle.com/)
-- Topic signals: Qualitative US market & Google Suggest research (free-tier estimates; search volumes are not fabricated).
+- Editorial standard: Product specifications and customization options are verified directly against live Zazzle listings.

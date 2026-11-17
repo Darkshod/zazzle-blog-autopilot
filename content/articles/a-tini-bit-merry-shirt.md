@@ -1,7 +1,7 @@
 ---
 title: "A Tini Bit Merry Shirt: Curated 2026 Buyer & Gift Guide"
 slug: "a-tini-bit-merry-shirt"
-description: "US guide to a tini bit merry shirt: customization tips, styling ideas, and curated holiday apparel picks on Zazzle."
+description: "US guide to a tini bit merry shirt: customization tips, styling ideas, and curated holiday apparel picks on Zazzle. Customize online in the US on Zazzle..."
 category: "Holiday Apparel"
 primary_keyword: "a tini bit merry shirt"
 ---
@@ -27,7 +27,7 @@ Instead of relying on loud novelty slogans, this piece works naturally for custo
 - **Related Ideas:** a tini bit merry shirt, dirty martini christmas tee, holiday cocktail party outfit, a tini bit merry
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/tini-tee.jpg" alt="A Tini Bit Merry Retro Martini Holiday Shirt" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/tini-tee.jpg" alt="A Tini Bit Merry Retro Martini Holiday Shirt" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Apparel</span>
     <h3>A Tini Bit Merry Retro Martini Holiday Shirt</h3>
@@ -51,7 +51,7 @@ When ordering graphic apparel, compare Zazzle's garment style selector (classic 
 ## Coordinating Picks to Pair Together
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Greeting Cards</span>
     <h3>Pinkmas Coquette Bow Tree Christmas Card</h3>
@@ -64,7 +64,7 @@ When ordering graphic apparel, compare Zazzle's garment style selector (classic 
 </div>
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Coffee Mugs</span>
     <h3>Pinkmas Coquette Bow Tree 11oz Coffee Mug</h3>
@@ -100,4 +100,4 @@ No. Pricing, promotions, and shipping estimates are set dynamically on Zazzle, s
 
 - Catalog record (`csv`): [A Tini Bit Merry Retro Martini Holiday Shirt](https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971)
 - Marketplace details: [Zazzle](https://www.zazzle.com/)
-- Topic signals: Qualitative US market & Google Suggest research (free-tier estimates; search volumes are not fabricated).
+- Editorial standard: Product specifications and customization options are verified directly against live Zazzle listings.

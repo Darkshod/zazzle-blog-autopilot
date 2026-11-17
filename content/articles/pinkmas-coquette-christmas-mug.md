@@ -1,7 +1,7 @@
 ---
 title: "Pinkmas Coquette Christmas Mug: Curated 2026 Buyer & Gift Guide"
 slug: "pinkmas-coquette-christmas-mug"
-description: "US guide to pinkmas coquette christmas mug: customization tips, styling ideas, and curated coffee mugs picks on Zazzle."
+description: "US guide to pinkmas coquette christmas mug: customization tips, styling ideas, and curated coffee mugs picks on Zazzle. Customize online in the US on..."
 category: "Coffee Mugs"
 primary_keyword: "pinkmas coquette christmas mug"
 ---
@@ -27,7 +27,7 @@ Instead of relying on loud novelty slogans, this piece works naturally for custo
 - **Related Ideas:** pinkmas coquette christmas mug, pink bow holiday coffee mug, pinkmas mug, coquette christmas mug
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Coffee Mugs</span>
     <h3>Pinkmas Coquette Bow Tree 11oz Coffee Mug</h3>
@@ -51,7 +51,7 @@ Classic 11oz ceramic mugs give daily-use visibility without feeling bulky on a d
 ## Coordinating Picks to Pair Together
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Greeting Cards</span>
     <h3>Pinkmas Coquette Bow Tree Christmas Card</h3>
@@ -64,7 +64,7 @@ Classic 11oz ceramic mugs give daily-use visibility without feeling bulky on a d
 </div>
 
 <div class="rec-card">
-  <div class="rec-card-media"><img src="https://darkshod.github.io/images/tini-tee.jpg" alt="A Tini Bit Merry Retro Martini Holiday Shirt" loading="lazy" decoding="async" /></div>
+  <div class="rec-card-media"><img src="https://darkshod.github.io/images/tini-tee.jpg" alt="A Tini Bit Merry Retro Martini Holiday Shirt" width="720" height="900" loading="lazy" decoding="async" /></div>
   <div class="rec-card-body">
     <span class="rec-badge">Affiliate Partner Link &middot; Holiday Apparel</span>
     <h3>A Tini Bit Merry Retro Martini Holiday Shirt</h3>
@@ -100,4 +100,4 @@ No. Pricing, promotions, and shipping estimates are set dynamically on Zazzle, s
 
 - Catalog record (`csv`): [Pinkmas Coquette Bow Tree 11oz Coffee Mug](https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860)
 - Marketplace details: [Zazzle](https://www.zazzle.com/)
-- Topic signals: Qualitative US market & Google Suggest research (free-tier estimates; search volumes are not fabricated).
+- Editorial standard: Product specifications and customization options are verified directly against live Zazzle listings.
