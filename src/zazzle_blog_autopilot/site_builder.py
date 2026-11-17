@@ -352,6 +352,8 @@ class StaticBlogBuilder:
                 brand,
                 tagline,
                 home_body,
+                ga4_id=self.settings.brand.ga4_measurement_id,
+                gsc_token=self.settings.brand.gsc_verification_token,
             ),
             encoding="utf-8",
         )

@@ -75,8 +75,20 @@ def validate_ga4_measurement_id(mid: str) -> bool:
     return bool(GA4_ID_RE.match((mid or "").strip()))
 
 
+def _load_local_dotenv(env_path: Path) -> None:
+    if not env_path.exists():
+        return
+    for line in env_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+
 def load_settings(path: Path | None = None) -> AppSettings:
     """Load YAML settings and apply non-secret environment overrides."""
+    _load_local_dotenv(ROOT_DIR / ".env")
     cfg_path = path or DEFAULT_SETTINGS_PATH
     raw: dict[str, Any] = {}
     if cfg_path.exists():
