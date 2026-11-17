@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import json
-import os
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from zazzle_blog_autopilot.config import load_settings
 from zazzle_blog_autopilot.integrations.gsc import GoogleSearchConsoleClient
@@ -17,19 +20,21 @@ def main() -> None:
         print(
             json.dumps(
                 {
-                    "status": "BLOCKED_MISSING_CREDENTIALS",
-                    "needed_env": ["GSC_ACCESS_TOKEN", "GSC_VERIFICATION_TOKEN (optional HTML meta)"],
-                    "sitemap_to_submit": f"{base}/sitemap.xml",
-                    "instructions": "See docs/GSC_SETUP.md to generate an OAuth access token and verify ownership.",
+                    "status": "BLOCKED_MISSING_OAUTH_CREDENTIALS",
+                    "property": f"{base}/",
+                    "ownership_verified": "Confirmed by owner in Google Search Console UI",
+                    "sitemap_submitted": f"{base}/sitemap.xml",
+                    "needed_env": ["GSC_CREDENTIALS_PATH (recommended: ./credentials/gsc_oauth.json) OR GSC_ACCESS_TOKEN"],
+                    "minimum_scope": GoogleSearchConsoleClient.READONLY_SCOPE,
+                    "instructions": "See docs/GSC_SETUP_GUIDE.md to configure OAuth / Service Account credentials locally (gitignored).",
                 },
                 indent=2,
             )
         )
         return
 
-    sm_res = gsc.submit_sitemap(f"{base}/sitemap.xml")
-    data = gsc.fetch_search_analytics(days=28)
-    print(json.dumps({"sitemap": sm_res, "analytics": data}, indent=2))
+    report = gsc.fetch_full_report(windows=(7, 28, 90))
+    print(json.dumps(report, indent=2))
 
 
 if __name__ == "__main__":
