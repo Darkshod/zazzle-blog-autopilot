@@ -200,19 +200,21 @@ class SEOContentAgent(BaseAgent):
             ]
             related = [p for p in products if p.id != product.id][:2]
 
-            # Cluster internal links: prioritize same category, then other planned guides
+            # Cluster internal links: only link to already-published/approved guides (avoid broken links to unpublished drafts)
+            published_or_approved = [a for a in existing_articles if a.status in ("published", "approved") and a.slug != slug]
             cluster_links = [
-                (t, f"/articles/{s}.html")
-                for _, p2, s, _, t in planned
-                if s != slug and p2.category == product.category
+                (a.title, f"/articles/{a.slug}.html")
+                for a in published_or_approved
+                if a.category == product.category
             ]
             if len(cluster_links) < 3:
                 cluster_links.extend(
-                    (t, f"/articles/{s}.html")
-                    for _, _, s, _, t in planned
-                    if s != slug and (t, f"/articles/{s}.html") not in cluster_links
+                    (a.title, f"/articles/{a.slug}.html")
+                    for a in published_or_approved
+                    if (a.title, f"/articles/{a.slug}.html") not in cluster_links
                 )
-            cluster_links.extend((a.title, f"/articles/{a.slug}.html") for a in existing_articles[:2])
+            if not cluster_links:
+                cluster_links = [("Browse All Curated Gift Guides", "/blog.html")]
             cluster_links = cluster_links[:3]
 
             body = _build_article_body(
