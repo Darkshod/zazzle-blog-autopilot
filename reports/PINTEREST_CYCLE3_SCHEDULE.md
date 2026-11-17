@@ -1,0 +1,27 @@
+# PINTEREST CYCLE 3 PUBLISHING SCHEDULE (@rafafo1225)
+
+**Timezone:** `Africa/Casablanca` (aligned to US EST peak windows)  
+**Authorization Status:** `NOT AUTHORIZED` — No pins will be published until individually approved and batch-authorized.
+
+| # | Day | Date | Time | Board | Title | Destination URL | Recommended | Status |
+|---:|---|---|---|---|---|---|---|---|
+| 1 | Day 1 | 2026-11-18 | 14:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | Tartan Rocking Horse Holiday Card | 2026 Gift Guide | https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html | APPROVE | pending_approval |
+| 2 | Day 1 | 2026-11-18 | 17:30 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | Pinkmas Coquette Christmas Mug | 2026 Gift Guide | https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html | APPROVE | pending_approval |
+| 3 | Day 1 | 2026-11-18 | 21:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | A Tini Bit Merry Christmas Mug | 2026 Gift Guide | https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html | APPROVE | pending_approval |
+| 4 | Day 2 | 2026-11-19 | 14:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | Pink Bow Holiday Coffee Mug | 2026 Gift Guide | https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html | APPROVE | pending_approval |
+| 5 | Day 2 | 2026-11-19 | 17:30 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | Old Money Christmas Card | 2026 Gift Guide | https://darkshod.github.io/articles/old-money-christmas-card.html | APPROVE | pending_approval |
+| 6 | Day 2 | 2026-11-19 | 21:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | How to Customize Holiday Gift Wrap for Old Money Christmas Gift Wrap | https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html | APPROVE | pending_approval |
+| 7 | Day 3 | 2026-11-20 | 14:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | How to Customize Holiday Greeting Cards for Old Money Christmas Card | https://darkshod.github.io/articles/old-money-christmas-card.html | NEEDS_EDIT | pending_approval |
+| 8 | Day 3 | 2026-11-20 | 17:30 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | Happy Veterans Day Heritage Eagle Card | 2026 Gift Guide | https://darkshod.github.io/articles/happy-veterans-day-heritage-eagle-card.html | APPROVE | pending_approval |
+| 9 | Day 3 | 2026-11-20 | 21:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | Patriotic Woodcut Greeting Card | 2026 Gift Guide | https://darkshod.github.io/articles/patriotic-woodcut-greeting-card.html | APPROVE | pending_approval |
+| 10 | Day 4 | 2026-11-21 | 14:00 (Africa/Casablanca) | Cozy Coffee Mugs & Gift Ideas | Bookshop And Tea Lover T-Shirt | 2026 Gift Guide | https://darkshod.github.io/articles/bookshop-and-tea-lover-t-shirt.html | APPROVE | pending_approval |
+| 11 | Day 4 | 2026-11-21 | 17:30 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | Old Money Christmas Gift Wrap | 2026 Gift Guide | https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html | NEEDS_EDIT | pending_approval |
+| 12 | Day 4 | 2026-11-21 | 21:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | Dirty Martini Christmas Tee | 2026 Gift Guide | https://darkshod.github.io/articles/dirty-martini-christmas-tee.html | APPROVE | pending_approval |
+| 13 | Day 5 | 2026-11-22 | 14:00 (Africa/Casablanca) | Vintage Graphic Tees & Cozy Apparel | Sourdough Baker Gift Shirt | 2026 Gift Guide | https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html | APPROVE | pending_approval |
+| 14 | Day 5 | 2026-11-22 | 17:30 (Africa/Casablanca) | Vintage Graphic Tees & Cozy Apparel | A Tini Bit Merry Shirt | 2026 Gift Guide | https://darkshod.github.io/articles/a-tini-bit-merry-shirt.html | APPROVE | pending_approval |
+| 15 | Day 5 | 2026-11-22 | 21:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | How to Customize Holiday Greeting Cards for Tartan Rocking Horse Holiday Card | https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html | NEEDS_EDIT | pending_approval |
+| 16 | Day 6 | 2026-11-23 | 14:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | How to Customize Coffee Mugs for Pinkmas Coquette Christmas Mug | https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html | NEEDS_EDIT | pending_approval |
+| 17 | Day 6 | 2026-11-23 | 17:30 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | How to Customize Coffee Mugs for A Tini Bit Merry Christmas Mug | https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html | NEEDS_EDIT | pending_approval |
+| 18 | Day 6 | 2026-11-23 | 21:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | How to Customize Coffee Mugs for Pink Bow Holiday Coffee Mug | https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html | NEEDS_EDIT | pending_approval |
+| 19 | Day 7 | 2026-11-24 | 14:00 (Africa/Casablanca) | Heirloom Holiday Cards & Christmas Decor | How to Customize Holiday Apparel for Dirty Martini Christmas Tee | https://darkshod.github.io/articles/dirty-martini-christmas-tee.html | NEEDS_EDIT | pending_approval |
+| 20 | Day 7 | 2026-11-24 | 17:30 (Africa/Casablanca) | Vintage Graphic Tees & Cozy Apparel | How to Customize Apparel for Sourdough Baker Gift Shirt | https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html | NEEDS_EDIT | pending_approval |

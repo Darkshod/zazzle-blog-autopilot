@@ -41,7 +41,7 @@ def _base_template(
         else ""
     )
     click_tracker_js = """<script>
-document.addEventListener('click',function(e){var a=e.target.closest('a.zazzle-cta-card');if(!a)return;var isAff=a.dataset.affiliate==='true';var payload={event_type:isAff?'affiliate_click':'outbound_product',article_slug:a.dataset.article||'unknown',product_id:a.dataset.productId||'',href:a.href};if(typeof gtag==='function'){gtag('event',isAff?'zazzle_affiliate_click':'zazzle_outbound_click',payload);}});
+(function(){if(window.__darkshodClickInit)return;window.__darkshodClickInit=true;document.addEventListener('click',function(e){var a=e.target.closest('a.zazzle-cta-card');if(!a||!a.href||a.href.indexOf('zazzle.com')===-1)return;var isAff=a.dataset.affiliate==='true';var payload={event_type:isAff?'affiliate_click':'outbound_product',article_slug:a.dataset.article||'unknown',product_id:a.dataset.productId||'',href:a.href};if(typeof gtag==='function'){gtag('event',isAff?'zazzle_affiliate_click':'zazzle_outbound_click',payload);}});})();
 </script>"""
     return f"""<!DOCTYPE html>
 <html lang="en">

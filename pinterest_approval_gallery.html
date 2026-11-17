@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DARKSHOD — Pinterest 20-Pin Visual Approval Gallery (@rafafo1225)</title>
+  <style>
+    body{font-family:system-ui,sans-serif;background:#faf8f4;color:#1b221e;margin:0;padding:1.5rem}
+    .wrap{max-width:1280px;margin:0 auto}
+    .bar{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e5dfd4;padding:1rem 1.25rem;border-radius:10px;margin-bottom:1.5rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:1.5rem}
+    .pin-card{background:#fff;border:1px solid #e5dfd4;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+    .pin-img img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;background:#eee}
+    .pin-body{padding:1rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+    .pin-meta{font-size:.78rem;color:#5b635e}
+    .rec-ok{color:#1b6e3f;font-weight:700} .rec-warn{color:#9c5700;font-weight:700}
+    .small{font-size:.82rem;color:#444;margin:0;word-break:break-word}
+    .btn-row{display:flex;gap:.5rem;margin-top:.75rem}
+    button{padding:.5rem .85rem;border:none;border-radius:6px;cursor:pointer;font-weight:600;color:#fff}
+    .btn-approve{background:#22382c} .btn-edit{background:#b36b00} .btn-reject{background:#8c2a2e}
+    .btn-export{background:#1b221e}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bar">
+      <div>
+        <h1 style="margin:0;font-size:1.4rem">DARKSHOD — Pinterest 20-Pin Approval Gallery (@rafafo1225)</h1>
+        <p style="margin:.25rem 0 0;color:#5b635e;font-size:.9rem">All 20 pins start as <code>pending_approval</code>. Approving individual pins does NOT publish externally.</p>
+      </div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="btn-export" onclick="exportSummary()">Export Approval Summary</button>
+        <button class="btn-approve" onclick="authorizeBatch()">Explicitly Authorize Approved Batch</button>
+      </div>
+    </div>
+    <pre id="summaryBox" style="display:none;background:#1b221e;color:#e7f3ec;padding:1rem;border-radius:8px;overflow:auto"></pre>
+    <div class="grid">
+        <article class="pin-card" id="pin-1">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/tartan-rocking-horse-holiday-card-pinterest-pin.jpg" alt="Tartan Rocking Horse Holiday Card | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #1 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-1">pending_approval</strong></div>
+            <h3>Tartan Rocking Horse Holiday Card | 2026 Gift Guide</h3>
+            <p>Discover curated tartan rocking horse holiday card ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #holidaygreetingcards</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-18 @ 14:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/tartan-rocking-horse-holiday-card-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html" target="_blank">https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (51 chars), natural description (133 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(1, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(1, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(1, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-2">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/pinkmas-coquette-christmas-mug-pinterest-pin.jpg" alt="Pinkmas Coquette Christmas Mug | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #2 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-2">pending_approval</strong></div>
+            <h3>Pinkmas Coquette Christmas Mug | 2026 Gift Guide</h3>
+            <p>Discover curated pinkmas coquette christmas mug ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #coffeemugs</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-18 @ 17:30 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/pinkmas-coquette-christmas-mug-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html" target="_blank">https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (48 chars), natural description (130 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(2, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(2, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(2, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-3">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/a-tini-bit-merry-christmas-mug-pinterest-pin.jpg" alt="A Tini Bit Merry Christmas Mug | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #3 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-3">pending_approval</strong></div>
+            <h3>A Tini Bit Merry Christmas Mug | 2026 Gift Guide</h3>
+            <p>Discover curated a tini bit merry christmas mug ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #coffeemugs</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-18 @ 21:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/a-tini-bit-merry-christmas-mug-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html" target="_blank">https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (48 chars), natural description (130 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(3, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(3, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(3, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-4">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/pink-bow-holiday-coffee-mug-pinterest-pin.jpg" alt="Pink Bow Holiday Coffee Mug | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #4 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-4">pending_approval</strong></div>
+            <h3>Pink Bow Holiday Coffee Mug | 2026 Gift Guide</h3>
+            <p>Discover curated pink bow holiday coffee mug ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #coffeemugs</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-19 @ 14:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/pink-bow-holiday-coffee-mug-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html" target="_blank">https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (45 chars), natural description (127 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(4, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(4, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(4, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-5">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/old-money-christmas-card-pinterest-pin.jpg" alt="Old Money Christmas Card | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #5 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-5">pending_approval</strong></div>
+            <h3>Old Money Christmas Card | 2026 Gift Guide</h3>
+            <p>Discover curated old money christmas card ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #holidaygreetingcards</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-19 @ 17:30 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/old-money-christmas-card-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/old-money-christmas-card.html" target="_blank">https://darkshod.github.io/articles/old-money-christmas-card.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (42 chars), natural description (124 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(5, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(5, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(5, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-6">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/old-money-christmas-gift-wrap-pinterest-pin.jpg" alt="How to Customize Holiday Gift Wrap for Old Money Christmas Gift Wrap" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #6 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-6">pending_approval</strong></div>
+            <h3>How to Customize Holiday Gift Wrap for Old Money Christmas Gift Wrap</h3>
+            <p>Step-by-step guide to personalizing old money christmas gift wrap designs cleanly before ordering on Zazzle.</p>
+            <p class="small"><strong>Keywords:</strong> #customgifts, #personalizedgifts, #shopusa</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-19 @ 21:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/old-money-christmas-gift-wrap-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html" target="_blank">https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (68 chars), natural description (108 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(6, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(6, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(6, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-7">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/old-money-christmas-card-pinterest-pin.jpg" alt="How to Customize Holiday Greeting Cards for Old Money Christmas Card" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #7 &middot; <span class="rec-warn">Rec: NEEDS_EDIT</span> &middot; Status: <strong id="st-7">pending_approval</strong></div>
+            <h3>How to Customize Holiday Greeting Cards for Old Money Christmas Card</h3>
+            <p>Step-by-step guide to personalizing old money christmas card designs cleanly before ordering on Zazzle.</p>
+            <p class="small"><strong>Keywords:</strong> #customgifts, #personalizedgifts, #shopusa</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-20 @ 14:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/old-money-christmas-card-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/old-money-christmas-card.html" target="_blank">https://darkshod.github.io/articles/old-money-christmas-card.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> DUPLICATE_IMAGE: Shares same 2:3 graphic as Pin 1 for this article; create distinct lifestyle/collage visual before publishing.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (68 chars), natural description (103 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(7, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(7, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(7, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-8">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/happy-veterans-day-heritage-eagle-card-pinterest-pin.jpg" alt="Happy Veterans Day Heritage Eagle Card | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #8 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-8">pending_approval</strong></div>
+            <h3>Happy Veterans Day Heritage Eagle Card | 2026 Gift Guide</h3>
+            <p>Discover curated happy veterans day heritage eagle card ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #patrioticstationery</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-20 @ 17:30 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/happy-veterans-day-heritage-eagle-card-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/happy-veterans-day-heritage-eagle-card.html" target="_blank">https://darkshod.github.io/articles/happy-veterans-day-heritage-eagle-card.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (56 chars), natural description (138 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(8, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(8, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(8, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-9">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/patriotic-woodcut-greeting-card-pinterest-pin.jpg" alt="Patriotic Woodcut Greeting Card | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #9 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-9">pending_approval</strong></div>
+            <h3>Patriotic Woodcut Greeting Card | 2026 Gift Guide</h3>
+            <p>Discover curated patriotic woodcut greeting card ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #patrioticstationery</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-20 @ 21:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/patriotic-woodcut-greeting-card-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/patriotic-woodcut-greeting-card.html" target="_blank">https://darkshod.github.io/articles/patriotic-woodcut-greeting-card.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (49 chars), natural description (131 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(9, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(9, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(9, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-10">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/bookshop-and-tea-lover-t-shirt-pinterest-pin.jpg" alt="Bookshop And Tea Lover T-Shirt | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #10 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-10">pending_approval</strong></div>
+            <h3>Bookshop And Tea Lover T-Shirt | 2026 Gift Guide</h3>
+            <p>Discover curated bookshop and tea lover t-shirt ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #apparel</p>
+            <p class="small"><strong>Board:</strong> Cozy Coffee Mugs &amp; Gift Ideas</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-21 @ 14:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/bookshop-and-tea-lover-t-shirt-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/bookshop-and-tea-lover-t-shirt.html" target="_blank">https://darkshod.github.io/articles/bookshop-and-tea-lover-t-shirt.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (48 chars), natural description (130 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(10, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(10, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(10, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-11">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/old-money-christmas-gift-wrap-pinterest-pin.jpg" alt="Old Money Christmas Gift Wrap | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #11 &middot; <span class="rec-warn">Rec: NEEDS_EDIT</span> &middot; Status: <strong id="st-11">pending_approval</strong></div>
+            <h3>Old Money Christmas Gift Wrap | 2026 Gift Guide</h3>
+            <p>Discover curated old money christmas gift wrap ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #holidaygiftwrap</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-21 @ 17:30 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/old-money-christmas-gift-wrap-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html" target="_blank">https://darkshod.github.io/articles/old-money-christmas-gift-wrap.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> DUPLICATE_IMAGE: Shares same 2:3 graphic as Pin 1 for this article; create distinct lifestyle/collage visual before publishing.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (47 chars), natural description (129 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(11, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(11, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(11, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-12">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/dirty-martini-christmas-tee-pinterest-pin.jpg" alt="Dirty Martini Christmas Tee | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #12 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-12">pending_approval</strong></div>
+            <h3>Dirty Martini Christmas Tee | 2026 Gift Guide</h3>
+            <p>Discover curated dirty martini christmas tee ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #holidayapparel</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-21 @ 21:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/dirty-martini-christmas-tee-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/dirty-martini-christmas-tee.html" target="_blank">https://darkshod.github.io/articles/dirty-martini-christmas-tee.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (45 chars), natural description (127 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(12, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(12, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(12, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-13">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/sourdough-baker-gift-shirt-pinterest-pin.jpg" alt="Sourdough Baker Gift Shirt | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #13 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-13">pending_approval</strong></div>
+            <h3>Sourdough Baker Gift Shirt | 2026 Gift Guide</h3>
+            <p>Discover curated sourdough baker gift shirt ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #apparel</p>
+            <p class="small"><strong>Board:</strong> Vintage Graphic Tees &amp; Cozy Apparel</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-22 @ 14:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/sourdough-baker-gift-shirt-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html" target="_blank">https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (44 chars), natural description (126 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(13, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(13, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(13, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-14">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/a-tini-bit-merry-shirt-pinterest-pin.jpg" alt="A Tini Bit Merry Shirt | 2026 Gift Guide" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #14 &middot; <span class="rec-ok">Rec: APPROVE</span> &middot; Status: <strong id="st-14">pending_approval</strong></div>
+            <h3>A Tini Bit Merry Shirt | 2026 Gift Guide</h3>
+            <p>Discover curated a tini bit merry shirt ideas, customization tips, and gift pairings for US shoppers. Read the full guide.</p>
+            <p class="small"><strong>Keywords:</strong> #giftguide, #zazzlefinds, #holidayapparel</p>
+            <p class="small"><strong>Board:</strong> Vintage Graphic Tees &amp; Cozy Apparel</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-22 @ 17:30 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/a-tini-bit-merry-shirt-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/a-tini-bit-merry-shirt.html" target="_blank">https://darkshod.github.io/articles/a-tini-bit-merry-shirt.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> PASS: Distinct 1000x1500 vertical 2:3 editorial graphic, crisp typography, mobile-readable.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (40 chars), natural description (122 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(14, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(14, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(14, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-15">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/tartan-rocking-horse-holiday-card-pinterest-pin.jpg" alt="How to Customize Holiday Greeting Cards for Tartan Rocking Horse Holiday Card" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #15 &middot; <span class="rec-warn">Rec: NEEDS_EDIT</span> &middot; Status: <strong id="st-15">pending_approval</strong></div>
+            <h3>How to Customize Holiday Greeting Cards for Tartan Rocking Horse Holiday Card</h3>
+            <p>Step-by-step guide to personalizing tartan rocking horse holiday card designs cleanly before ordering on Zazzle.</p>
+            <p class="small"><strong>Keywords:</strong> #customgifts, #personalizedgifts, #shopusa</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-22 @ 21:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/tartan-rocking-horse-holiday-card-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html" target="_blank">https://darkshod.github.io/articles/tartan-rocking-horse-holiday-card.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> DUPLICATE_IMAGE: Shares same 2:3 graphic as Pin 1 for this article; create distinct lifestyle/collage visual before publishing.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (77 chars), natural description (112 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(15, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(15, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(15, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-16">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/pinkmas-coquette-christmas-mug-pinterest-pin.jpg" alt="How to Customize Coffee Mugs for Pinkmas Coquette Christmas Mug" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #16 &middot; <span class="rec-warn">Rec: NEEDS_EDIT</span> &middot; Status: <strong id="st-16">pending_approval</strong></div>
+            <h3>How to Customize Coffee Mugs for Pinkmas Coquette Christmas Mug</h3>
+            <p>Step-by-step guide to personalizing pinkmas coquette christmas mug designs cleanly before ordering on Zazzle.</p>
+            <p class="small"><strong>Keywords:</strong> #customgifts, #personalizedgifts, #shopusa</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-23 @ 14:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/pinkmas-coquette-christmas-mug-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html" target="_blank">https://darkshod.github.io/articles/pinkmas-coquette-christmas-mug.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> DUPLICATE_IMAGE: Shares same 2:3 graphic as Pin 1 for this article; create distinct lifestyle/collage visual before publishing.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (63 chars), natural description (109 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(16, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(16, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(16, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-17">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/a-tini-bit-merry-christmas-mug-pinterest-pin.jpg" alt="How to Customize Coffee Mugs for A Tini Bit Merry Christmas Mug" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #17 &middot; <span class="rec-warn">Rec: NEEDS_EDIT</span> &middot; Status: <strong id="st-17">pending_approval</strong></div>
+            <h3>How to Customize Coffee Mugs for A Tini Bit Merry Christmas Mug</h3>
+            <p>Step-by-step guide to personalizing a tini bit merry christmas mug designs cleanly before ordering on Zazzle.</p>
+            <p class="small"><strong>Keywords:</strong> #customgifts, #personalizedgifts, #shopusa</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-23 @ 17:30 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/a-tini-bit-merry-christmas-mug-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html" target="_blank">https://darkshod.github.io/articles/a-tini-bit-merry-christmas-mug.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> DUPLICATE_IMAGE: Shares same 2:3 graphic as Pin 1 for this article; create distinct lifestyle/collage visual before publishing.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (63 chars), natural description (109 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(17, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(17, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(17, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-18">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/pink-bow-holiday-coffee-mug-pinterest-pin.jpg" alt="How to Customize Coffee Mugs for Pink Bow Holiday Coffee Mug" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #18 &middot; <span class="rec-warn">Rec: NEEDS_EDIT</span> &middot; Status: <strong id="st-18">pending_approval</strong></div>
+            <h3>How to Customize Coffee Mugs for Pink Bow Holiday Coffee Mug</h3>
+            <p>Step-by-step guide to personalizing pink bow holiday coffee mug designs cleanly before ordering on Zazzle.</p>
+            <p class="small"><strong>Keywords:</strong> #customgifts, #personalizedgifts, #shopusa</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-23 @ 21:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/pink-bow-holiday-coffee-mug-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html" target="_blank">https://darkshod.github.io/articles/pink-bow-holiday-coffee-mug.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> DUPLICATE_IMAGE: Shares same 2:3 graphic as Pin 1 for this article; create distinct lifestyle/collage visual before publishing.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (60 chars), natural description (106 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(18, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(18, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(18, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-19">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/dirty-martini-christmas-tee-pinterest-pin.jpg" alt="How to Customize Holiday Apparel for Dirty Martini Christmas Tee" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #19 &middot; <span class="rec-warn">Rec: NEEDS_EDIT</span> &middot; Status: <strong id="st-19">pending_approval</strong></div>
+            <h3>How to Customize Holiday Apparel for Dirty Martini Christmas Tee</h3>
+            <p>Step-by-step guide to personalizing dirty martini christmas tee designs cleanly before ordering on Zazzle.</p>
+            <p class="small"><strong>Keywords:</strong> #customgifts, #personalizedgifts, #shopusa</p>
+            <p class="small"><strong>Board:</strong> Heirloom Holiday Cards &amp; Christmas Decor</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-24 @ 14:00 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/dirty-martini-christmas-tee-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/dirty-martini-christmas-tee.html" target="_blank">https://darkshod.github.io/articles/dirty-martini-christmas-tee.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> DUPLICATE_IMAGE: Shares same 2:3 graphic as Pin 1 for this article; create distinct lifestyle/collage visual before publishing.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (64 chars), natural description (106 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(19, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(19, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(19, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article>
+        <article class="pin-card" id="pin-20">
+          <div class="pin-img"><img src="https://darkshod.github.io/assets/generated/sourdough-baker-gift-shirt-pinterest-pin.jpg" alt="How to Customize Apparel for Sourdough Baker Gift Shirt" loading="lazy" /></div>
+          <div class="pin-body">
+            <div class="pin-meta">Pin #20 &middot; <span class="rec-warn">Rec: NEEDS_EDIT</span> &middot; Status: <strong id="st-20">pending_approval</strong></div>
+            <h3>How to Customize Apparel for Sourdough Baker Gift Shirt</h3>
+            <p>Step-by-step guide to personalizing sourdough baker gift shirt designs cleanly before ordering on Zazzle.</p>
+            <p class="small"><strong>Keywords:</strong> #customgifts, #personalizedgifts, #shopusa</p>
+            <p class="small"><strong>Board:</strong> Vintage Graphic Tees &amp; Cozy Apparel</p>
+            <p class="small"><strong>Schedule:</strong> 2026-11-24 @ 17:30 (Africa/Casablanca)</p>
+            <p class="small"><strong>Image File:</strong> <code>site/assets/generated/sourdough-baker-gift-shirt-pinterest-pin.jpg</code> (Live HTTP 200)</p>
+            <p class="small"><strong>Destination:</strong> <a href="https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html" target="_blank">https://darkshod.github.io/articles/sourdough-baker-gift-shirt.html</a> (HTTP 200)</p>
+            <p class="small"><strong>Creative Quality:</strong> DUPLICATE_IMAGE: Shares same 2:3 graphic as Pin 1 for this article; create distinct lifestyle/collage visual before publishing.</p>
+            <p class="small"><strong>SEO Assessment:</strong> US buyer-intent title (55 chars), natural description (105 chars), 3 hashtags, exact board match.</p>
+            <div class="btn-row">
+              <button class="btn-approve" onclick="decide(20, 'approved')">APPROVE</button>
+              <button class="btn-edit" onclick="decide(20, 'needs_edit')">EDIT</button>
+              <button class="btn-reject" onclick="decide(20, 'rejected')">REJECT</button>
+            </div>
+          </div>
+        </article></div>
+  </div>
+  <script>
+    const localState = JSON.parse(localStorage.getItem('darkshod_pin_state') || '{}');
+    for (const [k, v] of Object.entries(localState)) {
+      const el = document.getElementById('st-' + k);
+      if (el) el.textContent = v;
+    }
+    async function decide(pinNumber, decision) {
+      let note = '';
+      if (decision === 'needs_edit') note = prompt('Optional edit note for Pin #' + pinNumber + ':') || '';
+      localState[pinNumber] = decision;
+      localStorage.setItem('darkshod_pin_state', JSON.stringify(localState));
+      document.getElementById('st-' + pinNumber).textContent = decision;
+      try {
+        await fetch('/api/pinterest/decision', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({pin_number: pinNumber, decision: decision, edit_note: note})
+        });
+      } catch (e) {}
+    }
+    async function exportSummary() {
+      const box = document.getElementById('summaryBox');
+      box.style.display = 'block';
+      try {
+        const res = await fetch('/api/pinterest/summary');
+        box.textContent = JSON.stringify(await res.json(), null, 2);
+      } catch (e) {
+        box.textContent = JSON.stringify(localState, null, 2);
+      }
+    }
+    async function authorizeBatch() {
+      if (!confirm('Authorize ONLY individually APPROVED pins for scheduled publishing? Rejected and Edit pins remain excluded.')) return;
+      try {
+        const res = await fetch('/api/pinterest/authorize-batch', {method: 'POST'});
+        const data = await res.json();
+        alert('Batch authorized: ' + data.approved_count + ' approved pins ready. Rejected/Edit excluded.');
+      } catch (e) {
+        alert('Start local FastAPI dashboard (python -m zazzle_blog_autopilot.cli dashboard) to persist server batch authorization.');
+      }
+    }
+  </script>
+</body>
+</html>

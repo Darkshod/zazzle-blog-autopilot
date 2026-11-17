@@ -6,12 +6,13 @@ import json
 import os
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import Body, FastAPI, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 
 from .agents.manager import ManagerAgent
-from .config import AppSettings, load_settings
+from .config import AppSettings, load_settings, validate_ga4_measurement_id
 from .db import Database
+from .models import utc_now_iso
 from .integrations.gsc import GoogleSearchConsoleClient
 from .integrations.pinterest_api import prioritize_top_pins
 from .site_builder import StaticBlogBuilder
@@ -202,6 +203,104 @@ def create_app(root_dir: Path | None = None) -> FastAPI:
     def api_emergency_stop(active: bool = True) -> JSONResponse:
         db.set_system_flag("emergency_stop", "true" if active else "false")
         return JSONResponse({"emergency_stop": active})
+
+    def _load_pin_state() -> dict:
+        p = work_dir / "pinterest_approval_state.json"
+        if not p.exists():
+            return {"account": "@rafafo1225", "total_pins": 0, "batch_authorized": False, "audit_log": [], "pins": []}
+        return json.loads(p.read_text(encoding="utf-8"))
+
+    def _save_pin_state(state: dict) -> None:
+        (work_dir / "pinterest_approval_state.json").write_text(json.dumps(state, indent=2), encoding="utf-8")
+
+    @app.get("/pinterest-gallery", response_class=HTMLResponse)
+    def pinterest_gallery_page() -> str:
+        gp = work_dir / "pinterest_approval_gallery.html"
+        if not gp.exists():
+            return "<h1>Gallery not built yet. Run scripts/build_pinterest_approval_system.py</h1>"
+        return gp.read_text(encoding="utf-8")
+
+    @app.get("/api/pinterest/summary")
+    def api_pinterest_summary() -> JSONResponse:
+        st = _load_pin_state()
+        pins = st.get("pins", [])
+        return JSONResponse({
+            "account": st.get("account", "@rafafo1225"),
+            "total_pins": len(pins),
+            "individually_verified_urls": sum(1 for p in pins if p.get("url_http_status") == 200),
+            "pending_approval": sum(1 for p in pins if p.get("decision") == "pending_approval"),
+            "approved": sum(1 for p in pins if p.get("decision") == "approved"),
+            "rejected": sum(1 for p in pins if p.get("decision") == "rejected"),
+            "needs_edit": sum(1 for p in pins if p.get("decision") == "needs_edit"),
+            "published": sum(1 for p in pins if p.get("decision") == "published"),
+            "batch_authorized": st.get("batch_authorized", False),
+        })
+
+    @app.post("/api/pinterest/decision")
+    def api_pinterest_decision(payload: dict = Body(...)) -> JSONResponse:
+        pin_number = int(payload.get("pin_number", 0))
+        decision = str(payload.get("decision", ""))
+        if decision not in ("approved", "rejected", "needs_edit", "pending_approval"):
+            raise HTTPException(status_code=400, detail="Invalid decision")
+        st = _load_pin_state()
+        found = False
+        for p in st.get("pins", []):
+            if p.get("pin_number") == pin_number:
+                p["decision"] = decision
+                p["edit_note"] = str(payload.get("edit_note", ""))
+                found = True
+                break
+        if not found:
+            raise HTTPException(status_code=404, detail="Pin not found")
+        st.setdefault("audit_log", []).append({"ts": utc_now_iso(), "action": "decision", "pin_number": pin_number, "decision": decision})
+        _save_pin_state(st)
+        return JSONResponse({"pin_number": pin_number, "decision": decision})
+
+    @app.post("/api/pinterest/authorize-batch")
+    def api_pinterest_authorize_batch() -> JSONResponse:
+        st = _load_pin_state()
+        pins = st.get("pins", [])
+        approved_pins = [p for p in pins if p.get("decision") == "approved"]
+        if not approved_pins:
+            raise HTTPException(status_code=400, detail="No individually approved pins to authorize.")
+        st["batch_authorized"] = True
+        st.setdefault("audit_log", []).append({"ts": utc_now_iso(), "action": "batch_authorized", "approved_count": len(approved_pins)})
+        _save_pin_state(st)
+        return JSONResponse({
+            "batch_authorized": True,
+            "approved_count": len(approved_pins),
+            "excluded_rejected": sum(1 for p in pins if p.get("decision") == "rejected"),
+            "excluded_needs_edit": sum(1 for p in pins if p.get("decision") == "needs_edit"),
+            "excluded_pending": sum(1 for p in pins if p.get("decision") == "pending_approval"),
+        })
+
+    @app.get("/api/integration-status")
+    def api_integration_status() -> JSONResponse:
+        ga4_ok = validate_ga4_measurement_id(settings.brand.ga4_measurement_id)
+        gsc_token_ok = bool(os.getenv("GSC_ACCESS_TOKEN"))
+        gsc_meta_ok = bool(settings.brand.gsc_verification_token)
+        seo_res = mgr.seo_doctor.run(dist_dir=work_dir / "dist").output_summary
+        pin_sum = json.loads(api_pinterest_summary().body.decode("utf-8"))
+        return JSONResponse({
+            "google_analytics": {
+                "status": "CONFIGURED" if ga4_ok else "NOT CONFIGURED",
+                "live_events_verified": False,
+            },
+            "google_search_console": {
+                "status": "API CONNECTED" if gsc_token_ok else "NOT CONFIGURED",
+                "ownership_verified": False,
+                "verification_tag_configured": gsc_meta_ok,
+                "sitemap_submitted": False,
+                "performance_data_available": False,
+            },
+            "pinterest": pin_sum,
+            "website": {
+                "article_count": len(db.list_articles(status="published")) + len(db.list_articles(status="approved")),
+                "sitemap_healthy": seo_res.get("sitemap_valid", False),
+                "broken_links": len([i for i in seo_res.get("issues", []) if "broken" in i]),
+                "healthy": seo_res.get("healthy", False),
+            },
+        })
 
     @app.post("/api/export-reports")
     def api_export_reports() -> JSONResponse:

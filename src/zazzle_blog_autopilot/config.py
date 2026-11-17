@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import re
 from pathlib import Path
 from typing import Any
 
@@ -67,6 +68,13 @@ class AppSettings(BaseModel):
     schedule: ScheduleConfig = Field(default_factory=ScheduleConfig)
 
 
+GA4_ID_RE = re.compile(r"^G-[A-Z0-9]{8,12}$")
+
+
+def validate_ga4_measurement_id(mid: str) -> bool:
+    return bool(GA4_ID_RE.match((mid or "").strip()))
+
+
 def load_settings(path: Path | None = None) -> AppSettings:
     """Load YAML settings and apply non-secret environment overrides."""
     cfg_path = path or DEFAULT_SETTINGS_PATH
@@ -84,7 +92,9 @@ def load_settings(path: Path | None = None) -> AppSettings:
     if env_approved := os.getenv("ZAZZLE_AFFILIATE_APPROVED"):
         settings.monetization.zazzle_affiliate_approved = env_approved.lower() == "true"
     if env_ga4 := os.getenv("GA4_MEASUREMENT_ID"):
-        settings.brand.ga4_measurement_id = env_ga4.strip()
+        cleaned = env_ga4.strip()
+        if validate_ga4_measurement_id(cleaned):
+            settings.brand.ga4_measurement_id = cleaned
     if env_gsc := os.getenv("GSC_VERIFICATION_TOKEN"):
         settings.brand.gsc_verification_token = env_gsc.strip()
 
