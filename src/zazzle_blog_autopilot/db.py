@@ -124,6 +124,34 @@ CREATE TABLE IF NOT EXISTS job_runs (
     updated_at TEXT NOT NULL,
     UNIQUE(run_id, step_name)
 );
+
+CREATE TABLE IF NOT EXISTS executive_tasks (
+    task_id TEXT PRIMARY KEY,
+    objective TEXT NOT NULL,
+    priority INTEGER NOT NULL,
+    assigned_agent TEXT NOT NULL,
+    expected_output TEXT NOT NULL,
+    status TEXT NOT NULL,
+    quality_score INTEGER NOT NULL DEFAULT 0,
+    verification_results TEXT NOT NULL DEFAULT '',
+    business_impact TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS financial_ledger (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    stream TEXT NOT NULL,
+    amount_usd REAL NOT NULL,
+    verified INTEGER NOT NULL DEFAULT 0,
+    note TEXT NOT NULL DEFAULT '',
+    recorded_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS system_state (
+    key TEXT PRIMARY KEY,
+    value TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
 """
 
 
@@ -548,4 +576,82 @@ class Database:
             "affiliate_clicks": affiliate_clicks,
             "verified_sales_and_commissions": "Unconnected (verify via Zazzle Earnings dashboard)",
             "top_articles": top_articles,
+        }
+
+    def set_system_flag(self, key: str, value: str) -> None:
+        with self._connect() as conn:
+            conn.execute(
+                """
+                INSERT INTO system_state (key, value, updated_at) VALUES (?, ?, ?)
+                ON CONFLICT(key) DO UPDATE SET value=excluded.value, updated_at=excluded.updated_at
+                """,
+                (key, value, utc_now_iso()),
+            )
+
+    def get_system_flag(self, key: str, default: str = "") -> str:
+        with self._connect() as conn:
+            row = conn.execute("SELECT value FROM system_state WHERE key = ?", (key,)).fetchone()
+        return str(row["value"]) if row else default
+
+    def upsert_executive_task(
+        self,
+        task_id: str,
+        objective: str,
+        priority: int,
+        assigned_agent: str,
+        expected_output: str,
+        status: str,
+        quality_score: int = 0,
+        verification_results: str = "",
+        business_impact: str = "medium",
+    ) -> None:
+        with self._connect() as conn:
+            conn.execute(
+                """
+                INSERT INTO executive_tasks (
+                    task_id, objective, priority, assigned_agent, expected_output,
+                    status, quality_score, verification_results, business_impact, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(task_id) DO UPDATE SET
+                    status=excluded.status,
+                    quality_score=excluded.quality_score,
+                    verification_results=excluded.verification_results,
+                    updated_at=excluded.updated_at
+                """,
+                (
+                    task_id, objective, priority, assigned_agent, expected_output,
+                    status, quality_score, verification_results, business_impact, utc_now_iso(),
+                ),
+            )
+
+    def list_executive_tasks(self) -> list[dict[str, Any]]:
+        with self._connect() as conn:
+            rows = conn.execute("SELECT * FROM executive_tasks ORDER BY priority ASC, updated_at DESC").fetchall()
+        return [dict(r) for r in rows]
+
+    def record_financial_entry(self, stream: str, amount_usd: float, verified: bool = False, note: str = "") -> None:
+        with self._connect() as conn:
+            conn.execute(
+                "INSERT INTO financial_ledger (stream, amount_usd, verified, note, recorded_at) VALUES (?, ?, ?, ?, ?)",
+                (stream, amount_usd, int(verified), note, utc_now_iso()),
+            )
+
+    def get_financial_summary(self) -> dict[str, Any]:
+        streams = ("product_sales", "affiliate_commissions", "advertising_revenue", "sponsorship_revenue", "operating_expenses")
+        totals: dict[str, float] = {s: 0.0 for s in streams}
+        with self._connect() as conn:
+            rows = conn.execute("SELECT stream, amount_usd, verified FROM financial_ledger WHERE verified = 1").fetchall()
+            count = conn.execute("SELECT COUNT(*) FROM financial_ledger").fetchone()[0]
+        for r in rows:
+            if r["stream"] in totals:
+                totals[r["stream"]] += float(r["amount_usd"])
+        gross = totals["product_sales"] + totals["affiliate_commissions"] + totals["advertising_revenue"] + totals["sponsorship_revenue"]
+        net = gross - totals["operating_expenses"]
+        return {
+            "entry_count": count,
+            "verified_only": True,
+            "streams_usd": totals,
+            "gross_revenue_usd": round(gross, 2),
+            "net_profit_usd": round(net, 2),
+            "status_label": "NOT VERIFIED (no verified payout entries yet)" if count == 0 else "VERIFIED",
         }

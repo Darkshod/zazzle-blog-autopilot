@@ -1,10 +1,10 @@
-"""FastAPI Dashboard & Action API — every button executes its real agent or pipeline action."""
+"""DARKSHOD Executive Business Control Center (FastAPI Dashboard & Action API)."""
 
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
-from typing import Any
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -12,6 +12,8 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from .agents.manager import ManagerAgent
 from .config import AppSettings, load_settings
 from .db import Database
+from .integrations.gsc import GoogleSearchConsoleClient
+from .integrations.pinterest_api import prioritize_top_pins
 from .site_builder import StaticBlogBuilder
 
 
@@ -22,14 +24,21 @@ def create_app(root_dir: Path | None = None) -> FastAPI:
     mgr = ManagerAgent(db=db, settings=settings, work_dir=work_dir)
     builder = StaticBlogBuilder(db=db, settings=settings, root_dir=work_dir)
 
-    app = FastAPI(title="Zazzle Blog Autopilot Dashboard", version="1.0.0")
+    app = FastAPI(title="DARKSHOD — Master Business Control Center", version="2.0.0")
 
     @app.get("/", response_class=HTMLResponse)
     def dashboard_home() -> str:
         metrics = db.get_dashboard_metrics()
+        fin = db.get_financial_summary()
         articles = db.list_articles()
-        logs = db.list_agent_logs(limit=12)
+        tasks = db.list_executive_tasks()[:10]
         seo_report = mgr.seo_doctor.run(dist_dir=work_dir / "dist").output_summary
+        emergency = db.get_system_flag("emergency_stop") == "true"
+
+        gsc_status = "CONNECTED" if os.getenv("GSC_ACCESS_TOKEN") else "NOT CONNECTED"
+        ga4_status = "CONNECTED" if os.getenv("GA4_MEASUREMENT_ID") else "NOT CONNECTED"
+        pin_status = "CONNECTED" if os.getenv("PINTEREST_ACCESS_TOKEN") else "NOT CONNECTED"
+        aff_status = "ACTIVE" if settings.monetization.zazzle_affiliate_approved else "NOT VERIFIED"
 
         article_rows = "".join(
             f"""<tr>
@@ -40,11 +49,11 @@ def create_app(root_dir: Path | None = None) -> FastAPI:
               <td><span class="pill">{a.status}</span></td>
               <td><button onclick="postAction('/api/articles/{a.slug}/approve')">Approve</button></td>
             </tr>"""
-            for a in articles[:20]
+            for a in articles[:15]
         )
-        log_rows = "".join(
-            f"<tr><td>{l['agent_name']}</td><td>{l['task']}</td><td>{l['status']}</td><td>{l['timestamp'][:19]}</td></tr>"
-            for l in logs
+        task_rows = "".join(
+            f"<tr><td>{t['task_id']}</td><td>{t['assigned_agent']}</td><td>{t['status']}</td><td>{t['business_impact']}</td></tr>"
+            for t in tasks
         )
 
         return f"""<!DOCTYPE html>
@@ -52,72 +61,77 @@ def create_app(root_dir: Path | None = None) -> FastAPI:
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zazzle Blog Autopilot — Control Dashboard</title>
+  <title>DARKSHOD — Executive Business Control Center</title>
   <style>
     body{{font-family:system-ui,sans-serif;background:#f7f5f0;color:#1b221e;margin:0;padding:1.5rem}}
-    .wrap{{max-width:1180px;margin:0 auto}}
-    h1{{margin:0 0 .3rem}}
-    .sub{{color:#5b635e;margin-bottom:1.25rem}}
-    .actions{{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}}
-    button{{padding:.58rem 1rem;border:1px solid #22382c;background:#22382c;color:#fff;border-radius:8px;cursor:pointer;font-weight:600}}
-    button:hover{{background:#16261d}}
-    .cards{{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem;margin-bottom:1.5rem}}
-    .card{{background:#fff;border:1px solid #e5dfd4;border-radius:10px;padding:1rem}}
-    .num{{font-size:1.65rem;font-weight:700;color:#22382c}}
-    .lbl{{font-size:.8rem;color:#5b635e;text-transform:uppercase;letter-spacing:.06em}}
+    .wrap{{max-width:1220px;margin:0 auto}}
+    h1{{margin:0 0 .25rem}}
+    .sub{{color:#5b635e;margin-bottom:1rem}}
+    .badges{{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}}
+    .badge{{padding:.3rem .75rem;border-radius:999px;font-size:.78rem;font-weight:700;background:#ece6da}}
+    .actions{{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.5rem}}
+    button{{padding:.55rem .95rem;border:1px solid #22382c;background:#22382c;color:#fff;border-radius:8px;cursor:pointer;font-weight:600}}
+    button.danger{{background:#8c2a2e;border-color:#8c2a2e}}
+    .cards{{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:.9rem;margin-bottom:1.5rem}}
+    .card{{background:#fff;border:1px solid #e5dfd4;border-radius:10px;padding:.95rem}}
+    .num{{font-size:1.45rem;font-weight:700;color:#22382c}}
+    .lbl{{font-size:.75rem;color:#5b635e;text-transform:uppercase;letter-spacing:.06em}}
     table{{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5dfd4;margin-bottom:1.5rem}}
-    th,td{{padding:.65rem .8rem;border-bottom:1px solid #eee;text-align:left;font-size:.9rem}}
+    th,td{{padding:.6rem .75rem;border-bottom:1px solid #eee;text-align:left;font-size:.88rem}}
     .pill{{padding:.2rem .55rem;border-radius:999px;background:#efeae1;font-size:.78rem}}
     pre{{background:#1b221e;color:#e7f3ec;padding:1rem;border-radius:8px;overflow:auto;max-height:220px}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Zazzle Blog Autopilot Dashboard</h1>
-    <p class="sub">Market: {settings.brand.primary_market} &middot; Approval Required: {settings.publishing.require_human_approval} &middot; Affiliate Approved: {settings.monetization.zazzle_affiliate_approved}</p>
+    <h1>DARKSHOD — Master Business Control Center</h1>
+    <p class="sub">Market: {settings.brand.primary_market} &middot; Top Bottleneck: {mgr.identify_top_bottleneck()}</p>
+
+    <div class="badges">
+      <span class="badge">GSC: {gsc_status}</span>
+      <span class="badge">GA4: {ga4_status}</span>
+      <span class="badge">Pinterest API v5: {pin_status}</span>
+      <span class="badge">Zazzle Affiliate: {aff_status}</span>
+      <span class="badge">Emergency Stop: {'ACTIVE' if emergency else 'OFF'}</span>
+    </div>
 
     <div class="actions">
       <button onclick="postAction('/api/run-all')">Run All Agents</button>
-      <button onclick="postAction('/api/research-products')">Research Products</button>
-      <button onclick="postAction('/api/find-keywords')">Find Keywords</button>
+      <button onclick="postAction('/api/find-keywords')">Run Research</button>
       <button onclick="postAction('/api/generate-articles')">Generate Articles</button>
       <button onclick="postAction('/api/run-seo-audit')">Run SEO Audit</button>
-      <button onclick="postAction('/api/generate-pins')">Generate Pinterest Pins</button>
-      <button onclick="postAction('/api/publish-approved')">Publish Approved Articles</button>
-      <button onclick="postAction('/api/export-reports')">Export Reports</button>
+      <button onclick="postAction('/api/generate-pins')">Generate Pinterest Campaign</button>
+      <button onclick="postAction('/api/publish-approved')">Publish Approved Content</button>
+      <button onclick="postAction('/api/run-weekly-report')">Run Weekly Report</button>
+      <button class="danger" onclick="postAction('/api/emergency-stop?active={'false' if emergency else 'true'}')">{'Resume System' if emergency else 'Emergency Stop'}</button>
     </div>
 
     <div class="cards">
       <div class="card"><div class="num">{metrics['total_products']}</div><div class="lbl">Zazzle Products</div></div>
-      <div class="card"><div class="num">{metrics['articles_generated']}</div><div class="lbl">Articles Generated</div></div>
-      <div class="card"><div class="num">{metrics['articles_published']}</div><div class="lbl">Articles Published</div></div>
-      <div class="card"><div class="num">{metrics['articles_awaiting_approval']}</div><div class="lbl">Awaiting Approval</div></div>
+      <div class="card"><div class="num">{metrics['articles_published']} / {metrics['articles_generated']}</div><div class="lbl">Published / Total</div></div>
       <div class="card"><div class="num">{metrics['target_keywords']}</div><div class="lbl">Target Keywords</div></div>
-      <div class="card"><div class="num">{metrics['pinterest_pins']}</div><div class="lbl">Pinterest Pins</div></div>
-      <div class="card"><div class="num">{metrics['product_outbound_clicks']}</div><div class="lbl">Outbound Clicks</div></div>
+      <div class="card"><div class="num">{metrics['pinterest_pins']}</div><div class="lbl">Pinterest Queue</div></div>
+      <div class="card"><div class="num">{metrics['product_outbound_clicks']}</div><div class="lbl">Product Clicks</div></div>
       <div class="card"><div class="num">{metrics['affiliate_clicks']}</div><div class="lbl">Affiliate Clicks</div></div>
-      <div class="card"><div class="num">{'HEALTHY' if seo_report.get('healthy') else 'NEEDS BUILD'}</div><div class="lbl">SEO Health ({len(seo_report.get('issues', []))} issues)</div></div>
+      <div class="card"><div class="num">${fin['net_profit_usd']:.2f}</div><div class="lbl">Verified Net ({fin['status_label'][:12]})</div></div>
+      <div class="card"><div class="num">{'HEALTHY' if seo_report.get('healthy') else 'NEEDS BUILD'}</div><div class="lbl">SEO Health</div></div>
     </div>
 
-    <p><strong>Organic Traffic:</strong> {metrics['organic_traffic']} &nbsp;|&nbsp; <strong>Verified Sales:</strong> {metrics['verified_sales_and_commissions']}</p>
+    <h2>Content &amp; Approval Queue</h2>
+    <table><thead><tr><th>Title</th><th>Category</th><th>Words</th><th>QA</th><th>Status</th><th>Action</th></tr></thead><tbody>{article_rows or '<tr><td colspan="6">No articles yet.</td></tr>'}</tbody></table>
 
-    <h2>Articles Queue</h2>
-    <table><thead><tr><th>Title</th><th>Category</th><th>Words</th><th>QA</th><th>Status</th><th>Action</th></tr></thead><tbody>{article_rows or '<tr><td colspan="6">No articles yet. Click Run All Agents.</td></tr>'}</tbody></table>
+    <h2>Executive Task Ledger (17-Agent Team)</h2>
+    <table><thead><tr><th>Task ID</th><th>Agent</th><th>Status</th><th>Impact</th></tr></thead><tbody>{task_rows or '<tr><td colspan="4">Run All Agents to populate task ledger.</td></tr>'}</tbody></table>
 
-    <h2>Agent Activity Log</h2>
-    <table><thead><tr><th>Agent</th><th>Task</th><th>Status</th><th>Timestamp</th></tr></thead><tbody>{log_rows or '<tr><td colspan="4">No logs yet.</td></tr>'}</tbody></table>
-
-    <h3>Action Output</h3>
-    <pre id="out">Click any button above to run an agent or export reports.</pre>
+    <pre id="out">Ready.</pre>
   </div>
   <script>
     async function postAction(url) {{
       const out = document.getElementById('out');
       out.textContent = 'Running ' + url + '...';
       const res = await fetch(url, {{method: 'POST'}});
-      const data = await res.json();
-      out.textContent = JSON.stringify(data, null, 2);
-      setTimeout(() => location.reload(), 900);
+      out.textContent = JSON.stringify(await res.json(), null, 2);
+      setTimeout(() => location.reload(), 800);
     }}
   </script>
 </body>
@@ -125,7 +139,7 @@ def create_app(root_dir: Path | None = None) -> FastAPI:
 
     @app.get("/api/metrics")
     def api_metrics() -> JSONResponse:
-        return JSONResponse(db.get_dashboard_metrics())
+        return JSONResponse({"business": db.get_dashboard_metrics(), "financial": db.get_financial_summary()})
 
     @app.post("/api/run-all")
     def api_run_all() -> JSONResponse:
@@ -156,12 +170,14 @@ def create_app(root_dir: Path | None = None) -> FastAPI:
 
     @app.post("/api/generate-pins")
     def api_generate_pins() -> JSONResponse:
-        return JSONResponse(mgr.pinterest_agent.run().model_dump())
+        res = mgr.pinterest_agent.run().model_dump()
+        top20 = prioritize_top_pins(db.list_pins(), limit=20)
+        res["top20_count"] = len(top20)
+        return JSONResponse(res)
 
     @app.post("/api/articles/{slug}/approve")
     def api_approve_article(slug: str) -> JSONResponse:
-        articles = {a.slug: a for a in db.list_articles()}
-        if slug not in articles:
+        if slug not in {a.slug for a in db.list_articles()}:
             raise HTTPException(status_code=404, detail="Article not found")
         db.set_article_status(slug, "approved")
         return JSONResponse({"slug": slug, "status": "approved"})
@@ -174,6 +190,18 @@ def create_app(root_dir: Path | None = None) -> FastAPI:
         build_res = builder.build(include_approved=True)
         seo_res = mgr.seo_doctor.run(dist_dir=work_dir / "dist").model_dump()
         return JSONResponse({"published_count": len(approved), "build": build_res, "seo_audit": seo_res})
+
+    @app.post("/api/run-weekly-report")
+    def api_weekly_report() -> JSONResponse:
+        gsc = GoogleSearchConsoleClient(settings.brand.base_url).fetch_search_analytics()
+        fin = mgr.financial_agent.run().model_dump()
+        mon = mgr.monetization_agent.run(dist_dir=work_dir / "dist").model_dump()
+        return JSONResponse({"gsc": gsc, "financial": fin, "monetization": mon, "metrics": db.get_dashboard_metrics()})
+
+    @app.post("/api/emergency-stop")
+    def api_emergency_stop(active: bool = True) -> JSONResponse:
+        db.set_system_flag("emergency_stop", "true" if active else "false")
+        return JSONResponse({"emergency_stop": active})
 
     @app.post("/api/export-reports")
     def api_export_reports() -> JSONResponse:

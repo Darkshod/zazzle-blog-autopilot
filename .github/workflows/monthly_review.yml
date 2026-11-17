@@ -1,0 +1,31 @@
+name: Monthly Business, SEO Cluster & Monetization Review
+
+on:
+  schedule:
+    # Runs on the 1st of every month at 13:00 UTC
+    - cron: "0 13 1 * *"
+  workflow_dispatch:
+
+jobs:
+  monthly-review:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run full test suite & 17-agent monthly audit
+        run: |
+          python -m pytest -v
+          python -m zazzle_blog_autopilot.cli run-all --csv data/sample_products.csv --max-articles 2
+          python -m zazzle_blog_autopilot.cli build-site
+          python scripts/phase3_engine.py
+      - name: Upload monthly review artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: monthly-business-review
+          path: reports/
