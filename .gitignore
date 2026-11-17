@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Environment & Secrets
+.env
+*.pem
+*.key
+credentials*.json
+token*.json
+
+# Runtime Data & Backups (keep sample_products.csv, ignore live DBs/logs)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/backups/
+logs/
+dist/
+reports/exports/
+
+# OS
+.DS_Store
+Thumbs.db

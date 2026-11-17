@@ -1,0 +1,32 @@
+name: Daily Zazzle Blog Autopilot
+
+on:
+  schedule:
+    # Runs daily in the cloud (14:00 UTC = 09:00 EST) — laptop does not need to stay on
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+
+jobs:
+  autopilot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run full test suite
+        run: python -m pytest -v
+      - name: Run daily research, drafting, QA & image pipeline
+        run: python -m zazzle_blog_autopilot.cli run-all --csv data/sample_products.csv --max-articles 2
+      - name: Build static site
+        run: python -m zazzle_blog_autopilot.cli build-site
+      - name: Upload generated artifacts (drafts + dist)
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-autopilot-output
+          path: |
+            content/articles/
+            dist/
+            data/autopilot.db

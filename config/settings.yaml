@@ -1,0 +1,56 @@
+brand:
+  name: "Your Brand Name" # Configure before deploying; do not assume shop name
+  tagline: "Thoughtful Gift Guides, Custom Stationery & Artisan Home Finds"
+  contact_email: "hello@example.com"
+  base_url: "https://example.pages.dev"
+  primary_market: "US"
+  secondary_markets: ["GB", "CA", "AU"]
+
+monetization:
+  zazzle_affiliate_approved: false # Set true ONLY after verifying program eligibility & approval
+  zazzle_affiliate_id: ""
+  zazzle_affiliate_param: "rf"
+  adsense_ready_pages: true
+  applicant_country: "MA" # Morocco — verify country eligibility & Payoneer/wire payout before registering
+
+publishing:
+  require_human_approval: true
+  min_word_count: 750
+  max_keyword_density_pct: 2.8
+  auto_publish_approved: false
+
+scoring_weights:
+  search_demand: 0.25
+  buyer_intent: 0.25
+  competition_difficulty: 0.20
+  product_relevance: 0.15
+  seasonal_opportunity: 0.10
+  ranking_feasibility: 0.05
+
+schedule:
+  timezone: "America/New_York"
+  jobs:
+    - time: "09:00"
+      agent: "market_research"
+      description: "Research market opportunities"
+    - time: "09:30"
+      agent: "keyword_research"
+      description: "Identify promising keywords"
+    - time: "10:00"
+      agent: "product_research"
+      description: "Match keywords to Zazzle products"
+    - time: "10:30"
+      agent: "seo_content"
+      description: "Generate article drafts"
+    - time: "11:00"
+      agent: "editorial_qa"
+      description: "Run SEO and editorial QA"
+    - time: "11:30"
+      agent: "image_creation"
+      description: "Generate article images and Pinterest assets"
+    - time: "12:00"
+      agent: "manager"
+      description: "Prepare publishing queue"
+    - time: "12:30"
+      agent: "analytics"
+      description: "Generate performance reports"
