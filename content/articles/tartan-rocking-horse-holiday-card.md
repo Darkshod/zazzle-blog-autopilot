@@ -24,10 +24,11 @@ Instead of relying on fleeting novelty templates, the **Tartan Rocking Horse Vin
 - **Aesthetic Direction:** Refined British countryside watercolor and ink
 - **Ideal Occasion:** Christmas / Winter
 - **Category:** Holiday Greeting Cards
-- **Related Search Themes:** old money christmas card, tartan rocking horse holiday card, ralph lauren inspired christmas card, tartan christmas card
+- **Related Search Themes:** old money christmas card, tartan rocking horse holiday card, tartan christmas card, old money christmas
 
 ### Featured Pick: Tartan Rocking Horse Vintage Christmas Card
 
+<p><img src="https://darkshod.github.io/images/tartan-card.jpg" alt="Tartan Rocking Horse Vintage Christmas Card" loading="lazy" style="max-width:340px;width:100%;border-radius:10px;" /></p>
 - **Best For:** US holiday hosts and equestrian decor lovers
 - **Style & Occasion:** Refined British countryside watercolor and ink (Christmas / Winter)
 - **Price:** Check current US listing price on Zazzle
@@ -38,7 +39,7 @@ Instead of relying on fleeting novelty templates, the **Tartan Rocking Horse Vin
 - Customizable inside greeting
 - Classic Black Watch plaid palette
 
-<a class="zazzle-cta-card" href="https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027" data-article="tartan-rocking-horse-holiday-card" data-product-id="3" data-affiliate="false" target="_blank" rel="noopener noreferrer">View Tartan Rocking Horse Vintage Christmas Card on Zazzle &rarr;</a>
+<a class="zazzle-cta-card" href="https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027?rf=238181835450951105" data-article="tartan-rocking-horse-holiday-card" data-product-id="5" data-affiliate="true" target="_blank" rel="sponsored noopener noreferrer">View Tartan Rocking Horse Vintage Christmas Card on Zazzle &rarr;</a>
 
 
 ## How to Customize and Choose the Right Format
@@ -51,10 +52,11 @@ One of the biggest advantages of ordering through Zazzle's print-on-demand marke
 
 ## Complementary Ideas to Pair Together
 
-Gift buyers often increase the thoughtfulness of a present by pairing a hero item with a coordinating card or everyday accessory from the same visual family. Below are complementary picks worth considering alongside [Tartan Rocking Horse Vintage Christmas Card](https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027):
+Gift buyers often increase the thoughtfulness of a present by pairing a hero item with a coordinating card or everyday accessory from the same visual family. Below are complementary picks worth considering alongside [Tartan Rocking Horse Vintage Christmas Card](https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027?rf=238181835450951105):
 
 ### Featured Pick: Pinkmas Coquette Bow Tree Christmas Card
 
+<p><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" loading="lazy" style="max-width:340px;width:100%;border-radius:10px;" /></p>
 - **Best For:** US millennial and Gen-Z holiday hosts and stationery buyers
 - **Style & Occasion:** Parisian boutique gouache and fine ink illustration (Christmas / Q4 Holiday)
 - **Price:** Check current US listing price on Zazzle
@@ -65,21 +67,22 @@ Gift buyers often increase the thoughtfulness of a present by pairing a hero ite
 - Crisp editorial serif typography
 - Printed on demand in the USA
 
-<a class="zazzle-cta-card" href="https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860" data-article="tartan-rocking-horse-holiday-card" data-product-id="1" data-affiliate="false" target="_blank" rel="noopener noreferrer">View Pinkmas Coquette Bow Tree Christmas Card on Zazzle &rarr;</a>
+<a class="zazzle-cta-card" href="https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105" data-article="tartan-rocking-horse-holiday-card" data-product-id="1" data-affiliate="true" target="_blank" rel="sponsored noopener noreferrer">View Pinkmas Coquette Bow Tree Christmas Card on Zazzle &rarr;</a>
 
-### Featured Pick: A Tini Bit Merry Retro Martini Holiday Shirt
+### Featured Pick: Pinkmas Coquette Bow Tree 11oz Coffee Mug
 
-- **Best For:** US cocktail enthusiasts and holiday party hosts
-- **Style & Occasion:** Mid-century modern retro screen-print illustration (Christmas Party / Winter)
+<p><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" loading="lazy" style="max-width:340px;width:100%;border-radius:10px;" /></p>
+- **Best For:** US coquette decor lovers and holiday gift shoppers
+- **Style & Occasion:** Parisian boutique gouache illustration (Christmas / Q4 Holiday)
 - **Price:** Check current US listing price on Zazzle
 
-**Why It Fits:** Classic cotton crew-neck t-shirt with a mid-century screen-print olive martini glass, crimson holiday bow, and winter holly garnish.
+**Why It Fits:** 11oz white ceramic mug printed with our gouache pink bow Christmas tree and winter taper candles.
 
-- Soft everyday cotton tee
-- Playful retro barware illustration
-- Great for holiday happy hours
+- Classic 11oz ceramic mug
+- Dishwasher-safe print
+- Cozy winter gift
 
-<a class="zazzle-cta-card" href="https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971" data-article="tartan-rocking-horse-holiday-card" data-product-id="2" data-affiliate="false" target="_blank" rel="noopener noreferrer">View A Tini Bit Merry Retro Martini Holiday Shirt on Zazzle &rarr;</a>
+<a class="zazzle-cta-card" href="https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105" data-article="tartan-rocking-horse-holiday-card" data-product-id="2" data-affiliate="true" target="_blank" rel="sponsored noopener noreferrer">View Pinkmas Coquette Bow Tree 11oz Coffee Mug on Zazzle &rarr;</a>
 
 
 ## Who Should Choose This Design (and Who Shouldn't)

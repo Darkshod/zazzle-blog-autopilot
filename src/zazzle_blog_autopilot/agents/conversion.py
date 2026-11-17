@@ -32,8 +32,14 @@ def render_product_card_markdown(
     price_line = f"**Verified Price:** ${product.price_usd:.2f} USD" if product.price_usd is not None else "**Price:** Check current US listing price on Zazzle"
     points = "\n".join(f"- {pt}" for pt in (product.selling_points or [product.description]))
     rel_attr = 'rel="sponsored noopener noreferrer"' if is_aff else 'rel="noopener noreferrer"'
+    img_html = (
+        f'<p><img src="{product.image_url}" alt="{product.name}" loading="lazy" style="max-width:340px;width:100%;border-radius:10px;" /></p>\n'
+        if product.image_url
+        else ""
+    )
     return (
         f"### Featured Pick: {product.name}\n\n"
+        f"{img_html}"
         f"- **Best For:** {product.target_customer}\n"
         f"- **Style & Occasion:** {product.design_style} ({product.occasion_season})\n"
         f"- {price_line}\n\n"

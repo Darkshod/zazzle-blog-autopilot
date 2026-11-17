@@ -28,6 +28,7 @@ Instead of relying on fleeting novelty templates, the **A Tini Bit Merry Retro M
 
 ### Featured Pick: A Tini Bit Merry Retro Martini Holiday Shirt
 
+<p><img src="https://darkshod.github.io/images/tini-tee.jpg" alt="A Tini Bit Merry Retro Martini Holiday Shirt" loading="lazy" style="max-width:340px;width:100%;border-radius:10px;" /></p>
 - **Best For:** US cocktail enthusiasts and holiday party hosts
 - **Style & Occasion:** Mid-century modern retro screen-print illustration (Christmas Party / Winter)
 - **Price:** Check current US listing price on Zazzle
@@ -38,7 +39,7 @@ Instead of relying on fleeting novelty templates, the **A Tini Bit Merry Retro M
 - Playful retro barware illustration
 - Great for holiday happy hours
 
-<a class="zazzle-cta-card" href="https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971?rf=238181835450951105" data-article="a-tini-bit-merry-shirt" data-product-id="2" data-affiliate="true" target="_blank" rel="sponsored noopener noreferrer">View A Tini Bit Merry Retro Martini Holiday Shirt on Zazzle &rarr;</a>
+<a class="zazzle-cta-card" href="https://www.zazzle.com/a_tini_bit_merry_retro_martini_holiday_shirt-256613549210546971?rf=238181835450951105" data-article="a-tini-bit-merry-shirt" data-product-id="3" data-affiliate="true" target="_blank" rel="sponsored noopener noreferrer">View A Tini Bit Merry Retro Martini Holiday Shirt on Zazzle &rarr;</a>
 
 
 ## How to Customize and Choose the Right Format
@@ -55,6 +56,7 @@ Gift buyers often increase the thoughtfulness of a present by pairing a hero ite
 
 ### Featured Pick: Pinkmas Coquette Bow Tree Christmas Card
 
+<p><img src="https://darkshod.github.io/images/pinkmas-card.jpg" alt="Pinkmas Coquette Bow Tree Christmas Card" loading="lazy" style="max-width:340px;width:100%;border-radius:10px;" /></p>
 - **Best For:** US millennial and Gen-Z holiday hosts and stationery buyers
 - **Style & Occasion:** Parisian boutique gouache and fine ink illustration (Christmas / Q4 Holiday)
 - **Price:** Check current US listing price on Zazzle
@@ -67,19 +69,20 @@ Gift buyers often increase the thoughtfulness of a present by pairing a hero ite
 
 <a class="zazzle-cta-card" href="https://www.zazzle.com/pinkmas_coquette_bow_tree_christmas_card-256802400221516860?rf=238181835450951105" data-article="a-tini-bit-merry-shirt" data-product-id="1" data-affiliate="true" target="_blank" rel="sponsored noopener noreferrer">View Pinkmas Coquette Bow Tree Christmas Card on Zazzle &rarr;</a>
 
-### Featured Pick: Tartan Rocking Horse Vintage Christmas Card
+### Featured Pick: Pinkmas Coquette Bow Tree 11oz Coffee Mug
 
-- **Best For:** US holiday hosts and equestrian decor lovers
-- **Style & Occasion:** Refined British countryside watercolor and ink (Christmas / Winter)
+<p><img src="https://darkshod.github.io/images/pinkmas-mug.jpg" alt="Pinkmas Coquette Bow Tree 11oz Coffee Mug" loading="lazy" style="max-width:340px;width:100%;border-radius:10px;" /></p>
+- **Best For:** US coquette decor lovers and holiday gift shoppers
+- **Style & Occasion:** Parisian boutique gouache illustration (Christmas / Q4 Holiday)
 - **Price:** Check current US listing price on Zazzle
 
-**Why It Fits:** Classic 5x7 folded Christmas card with a watercolor wooden rocking horse draped in Black Watch tartan and cedar wreath.
+**Why It Fits:** 11oz white ceramic mug printed with our gouache pink bow Christmas tree and winter taper candles.
 
-- Heirloom equestrian aesthetic
-- Customizable inside greeting
-- Classic Black Watch plaid palette
+- Classic 11oz ceramic mug
+- Dishwasher-safe print
+- Cozy winter gift
 
-<a class="zazzle-cta-card" href="https://www.zazzle.com/tartan_rocking_horse_vintage_christmas_card-256144319816877027?rf=238181835450951105" data-article="a-tini-bit-merry-shirt" data-product-id="3" data-affiliate="true" target="_blank" rel="sponsored noopener noreferrer">View Tartan Rocking Horse Vintage Christmas Card on Zazzle &rarr;</a>
+<a class="zazzle-cta-card" href="https://www.zazzle.com/pinkmas_coquette_bow_tree_11oz_coffee_mug-256760309246942860?rf=238181835450951105" data-article="a-tini-bit-merry-shirt" data-product-id="2" data-affiliate="true" target="_blank" rel="sponsored noopener noreferrer">View Pinkmas Coquette Bow Tree 11oz Coffee Mug on Zazzle &rarr;</a>
 
 
 ## Who Should Choose This Design (and Who Shouldn't)
@@ -102,8 +105,7 @@ Zazzle fulfills orders through its global print-on-demand network, serving shopp
 
 ## Related Guides on This Site
 
-- [Articles/Dirty Martini Christmas Tee.Html](/articles/dirty-martini-christmas-tee.html)
-- [Articles/Old Money Christmas Card.Html](/articles/old-money-christmas-card.html)
+- [Browse All Curated Gift Guides](/)
 
 ## Sources & Editorial Notes
 
