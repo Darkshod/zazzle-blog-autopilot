@@ -119,6 +119,13 @@ nav a:hover{color:var(--ink)}
 .article-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;margin:2rem 0}
 .article-wrap img{max-width:100%;height:auto;border-radius:8px}
 .zazzle-cta-card{display:inline-block;margin:.6rem 0;padding:.75rem 1.4rem;background:var(--accent);color:#fff!important;border-radius:999px;text-decoration:none;font-weight:600}
+.cta-secondary-btn{display:inline-block;margin:.6rem 0;padding:.72rem 1.3rem;background:#fff;color:var(--accent)!important;border:1px solid var(--accent);border-radius:999px;text-decoration:none;font-weight:600}
+.top-cta-bar{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1rem 0 1.25rem;padding:.9rem 1.1rem;background:#faf8f4;border:1px solid var(--border);border-radius:10px}
+.bottom-cta-box{margin:2rem 0 1.5rem;padding:1.5rem;background:#22382c;color:#faf8f4;border-radius:12px;text-align:center}
+.bottom-cta-box h2,.bottom-cta-box h3{color:#fff;font-family:Georgia,serif;margin:0 0 .5rem}
+.bottom-cta-box p{color:#e7e1d7;margin:0 auto .9rem;max-width:560px}
+.bottom-cta-box .zazzle-cta-card{background:#a9864c;color:#fff!important}
+.bottom-cta-box-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
 .rec-card{display:grid;grid-template-columns:210px 1fr;gap:1.25rem;background:#faf8f4;border:1px solid var(--border);border-radius:10px;padding:1rem;margin:1.25rem 0;align-items:start}
 .rec-card-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block}
 .rec-badge{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:700;display:block;margin-bottom:.25rem}
@@ -209,11 +216,37 @@ class StaticBlogBuilder:
             related_html = "".join(
                 f'<li><a href="/articles/{r.slug}.html">{html.escape(r.title)}</a></li>' for r in related
             )
+            cta_match = re.search(
+                r'<a class="zazzle-cta-card" href="([^"]+)" data-article="([^"]+)" data-product-id="([^"]+)" data-affiliate="([^"]+)" target="_blank" (rel="[^"]+")>',
+                rendered,
+            )
+            top_cta_html = ""
+            bottom_cta_html = ""
+            if cta_match:
+                c_href, c_art, c_pid, c_aff, c_rel = cta_match.groups()
+                top_cta_html = (
+                    f'<div class="top-cta-bar">'
+                    f'<a class="zazzle-cta-card" href="{c_href}" data-article="{c_art}" data-product-id="{c_pid}" data-affiliate="{c_aff}" target="_blank" {c_rel}>Shop &amp; Customize on Zazzle &rarr;</a>'
+                    f'<a class="cta-secondary-btn" href="#gift-picks">Jump to Curated Picks &darr;</a>'
+                    f"</div>"
+                )
+                bottom_cta_html = (
+                    f'<section class="bottom-cta-box">'
+                    f"<h3>Ready to Customize This Gift on Zazzle?</h3>"
+                    f"<p>Preview live personalization, finishes, and current US pricing directly on Zazzle before ordering.</p>"
+                    f'<div class="bottom-cta-box-actions">'
+                    f'<a class="zazzle-cta-card" href="{c_href}" data-article="{c_art}" data-product-id="{c_pid}" data-affiliate="{c_aff}" target="_blank" {c_rel}>Customize &amp; Order on Zazzle &rarr;</a>'
+                    f'<a class="cta-secondary-btn" href="/blog.html">Explore All Gift Guides &rarr;</a>'
+                    f"</div></section>"
+                )
+            rendered_with_anchor = rendered.replace('<div class="rec-card">', '<div id="gift-picks" class="rec-card">', 1)
             article_html = f"""
             <div class="article-wrap">
               <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/categories/{cat_slug}.html">{html.escape(art.category)}</a> &rsaquo; {html.escape(art.title)}</div>
               {hero_img}
-              {rendered}
+              {top_cta_html}
+              {rendered_with_anchor}
+              {bottom_cta_html}
               <section><h3>More Gift &amp; Shopping Guides</h3><ul>{related_html or '<li><a href="/">Browse All Guides</a></li>'}</ul></section>
             </div>
             """
