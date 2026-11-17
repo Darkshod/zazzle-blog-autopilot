@@ -214,7 +214,7 @@ class SEOContentAgent(BaseAgent):
                     if (a.title, f"/articles/{a.slug}.html") not in cluster_links
                 )
             if not cluster_links:
-                cluster_links = [("Browse All Curated Gift Guides", "/blog.html")]
+                cluster_links = [("Browse All Curated Gift Guides", "/")]
             cluster_links = cluster_links[:3]
 
             body = _build_article_body(
