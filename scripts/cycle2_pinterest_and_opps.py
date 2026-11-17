@@ -103,7 +103,7 @@ def main() -> None:
             + o["competition"] * w["competition_difficulty"]
             + o["fit"] * w["product_relevance"]
             + o["seasonality"] * w["seasonal_opportunity"]
-            + o["feasibility"] * w["execution_feasibility"]
+            + o["feasibility"] * w.get("ranking_feasibility", 0.05)
         )
         opp_lines.append(
             f"| {o['opportunity']} | **{total:.2f}** | {o['demand']} | {o['intent']} | {o['competition']} | {o['fit']} | {o['seasonality']} | {o['feasibility']} |"
