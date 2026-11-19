@@ -1,6 +1,6 @@
 {
   "connected": true,
-  "generated_at": "2026-11-17T19:12:02.273095+00:00",
+  "generated_at": "2026-11-19T13:39:02.552824+00:00",
   "reporting_delay_days": 2,
   "sites": {
     "connected": true,
@@ -28,97 +28,175 @@
     "7d": {
       "totals": {
         "connected": true,
-        "start_date": "2026-11-09",
-        "end_date": "2026-11-15",
-        "rows": []
+        "start_date": "2026-11-11",
+        "end_date": "2026-11-17",
+        "rows": [
+          {
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": 0,
+            "position": 0
+          }
+        ]
       },
       "query_page": {
         "connected": true,
-        "start_date": "2026-11-09",
-        "end_date": "2026-11-15",
+        "start_date": "2026-11-11",
+        "end_date": "2026-11-17",
         "rows": []
       },
       "country": {
         "connected": true,
-        "start_date": "2026-11-09",
-        "end_date": "2026-11-15",
+        "start_date": "2026-11-11",
+        "end_date": "2026-11-17",
         "rows": []
       },
       "device": {
         "connected": true,
-        "start_date": "2026-11-09",
-        "end_date": "2026-11-15",
+        "start_date": "2026-11-11",
+        "end_date": "2026-11-17",
         "rows": []
       },
       "daily": {
         "connected": true,
-        "start_date": "2026-11-09",
-        "end_date": "2026-11-15",
-        "rows": []
+        "start_date": "2026-11-11",
+        "end_date": "2026-11-17",
+        "rows": [
+          {
+            "keys": [
+              "2026-11-16"
+            ],
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": 0,
+            "position": 0
+          },
+          {
+            "keys": [
+              "2026-11-17"
+            ],
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": 0,
+            "position": 0
+          }
+        ]
       }
     },
     "28d": {
       "totals": {
         "connected": true,
-        "start_date": "2026-10-19",
-        "end_date": "2026-11-15",
-        "rows": []
+        "start_date": "2026-10-21",
+        "end_date": "2026-11-17",
+        "rows": [
+          {
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": 0,
+            "position": 0
+          }
+        ]
       },
       "query_page": {
         "connected": true,
-        "start_date": "2026-10-19",
-        "end_date": "2026-11-15",
+        "start_date": "2026-10-21",
+        "end_date": "2026-11-17",
         "rows": []
       },
       "country": {
         "connected": true,
-        "start_date": "2026-10-19",
-        "end_date": "2026-11-15",
+        "start_date": "2026-10-21",
+        "end_date": "2026-11-17",
         "rows": []
       },
       "device": {
         "connected": true,
-        "start_date": "2026-10-19",
-        "end_date": "2026-11-15",
+        "start_date": "2026-10-21",
+        "end_date": "2026-11-17",
         "rows": []
       },
       "daily": {
         "connected": true,
-        "start_date": "2026-10-19",
-        "end_date": "2026-11-15",
-        "rows": []
+        "start_date": "2026-10-21",
+        "end_date": "2026-11-17",
+        "rows": [
+          {
+            "keys": [
+              "2026-11-16"
+            ],
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": 0,
+            "position": 0
+          },
+          {
+            "keys": [
+              "2026-11-17"
+            ],
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": 0,
+            "position": 0
+          }
+        ]
       }
     },
     "90d": {
       "totals": {
         "connected": true,
-        "start_date": "2026-08-18",
-        "end_date": "2026-11-15",
-        "rows": []
+        "start_date": "2026-08-20",
+        "end_date": "2026-11-17",
+        "rows": [
+          {
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": 0,
+            "position": 0
+          }
+        ]
       },
       "query_page": {
         "connected": true,
-        "start_date": "2026-08-18",
-        "end_date": "2026-11-15",
+        "start_date": "2026-08-20",
+        "end_date": "2026-11-17",
         "rows": []
       },
       "country": {
         "connected": true,
-        "start_date": "2026-08-18",
-        "end_date": "2026-11-15",
+        "start_date": "2026-08-20",
+        "end_date": "2026-11-17",
         "rows": []
       },
       "device": {
         "connected": true,
-        "start_date": "2026-08-18",
-        "end_date": "2026-11-15",
+        "start_date": "2026-08-20",
+        "end_date": "2026-11-17",
         "rows": []
       },
       "daily": {
         "connected": true,
-        "start_date": "2026-08-18",
-        "end_date": "2026-11-15",
-        "rows": []
+        "start_date": "2026-08-20",
+        "end_date": "2026-11-17",
+        "rows": [
+          {
+            "keys": [
+              "2026-11-16"
+            ],
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": 0,
+            "position": 0
+          },
+          {
+            "keys": [
+              "2026-11-17"
+            ],
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": 0,
+            "position": 0
+          }
+        ]
       }
     }
   }

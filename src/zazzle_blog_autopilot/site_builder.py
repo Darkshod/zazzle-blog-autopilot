@@ -434,6 +434,29 @@ class StaticBlogBuilder:
         )
         (dist_dir / "search-index.json").write_text(json.dumps(search_index, indent=2), encoding="utf-8")
 
+        # 8. RSS 2.0 Feed for Pinterest / Flipboard / Feed Syndication
+        rss_items = "\n".join(
+            f"""    <item>
+      <title>{html.escape(a.title)}</title>
+      <link>{html.escape(f"{base_url}/articles/{a.slug}.html")}</link>
+      <guid>{html.escape(f"{base_url}/articles/{a.slug}.html")}</guid>
+      <description>{html.escape(a.meta_description)}</description>
+    </item>"""
+            for a in articles
+        )
+        rss_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{html.escape(brand)} — Curated US Gift Guides</title>
+    <link>{html.escape(base_url)}/</link>
+    <description>{html.escape(tagline)}</description>
+    <language>en-us</language>
+{rss_items}
+  </channel>
+</rss>
+"""
+        (dist_dir / "rss.xml").write_text(rss_xml, encoding="utf-8")
+
         return {
             "dist_dir": str(dist_dir),
             "articles_built": len(articles),
