@@ -128,7 +128,7 @@ nav a:hover{color:var(--ink)}
 .article-wrap h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.9rem,4vw,2.65rem);line-height:1.15;margin-top:.5rem}
 .article-wrap h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.65rem;margin:2rem 0 .75rem;color:var(--accent)}
 .article-wrap img{max-width:100%;height:auto;border-radius:12px}
-.zazzle-cta-card{display:inline-flex;align-items:center;gap:.4rem;margin:.4rem 0;padding:.8rem 1.55rem;background:var(--accent);color:#fff!important;border-radius:999px;text-decoration:none;font-weight:600;font-size:.94rem;box-shadow:0 4px 14px rgba(34,56,44,.22);transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
+.zazzle-cta-card{display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap;margin:.4rem 0;padding:.8rem 1.55rem;background:var(--accent);color:#fff!important;border-radius:999px;text-decoration:none;font-weight:600;font-size:.94rem;box-shadow:0 4px 14px rgba(34,56,44,.22);transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
 .zazzle-cta-card:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 8px 20px rgba(34,56,44,.28)}
 .cta-secondary-btn{display:inline-flex;align-items:center;margin:.4rem 0;padding:.76rem 1.35rem;background:#fff;color:var(--accent)!important;border:1px solid var(--accent);border-radius:999px;text-decoration:none;font-weight:600;font-size:.92rem;transition:background .18s ease}
 .cta-secondary-btn:hover{background:#f3efe7}
